@@ -1,3 +1,4 @@
 # XPM
-A Cross Platform App for scheduling and managing Interviews.
-The app is being developed using Ionic framework.
+This repo contains the mobile apps developed by NTEG.XPM
+
+Stay tuned for awesome stuff!
