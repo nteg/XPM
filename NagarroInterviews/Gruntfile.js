@@ -161,7 +161,7 @@ module.exports = function (grunt) {
       }
     },
 
-    
+
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
@@ -190,7 +190,7 @@ module.exports = function (grunt) {
         }
       }
     },
-    
+
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -523,7 +523,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('init', [
-    'clean',
+    //'clean',
     'ngconstant:development',
     'wiredep',
     'concurrent:server',
@@ -534,7 +534,7 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('compress', [
-    'clean',
+    //'clean',
     'ngconstant:production',
     'wiredep',
     'useminPrepare',
@@ -549,7 +549,7 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('coverage', 
+  grunt.registerTask('coverage',
     ['karma:continuous',
     'connect:coverage:keepalive'
   ]);

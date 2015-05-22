@@ -1,0 +1,56 @@
+<ion-tabs class="tabs-icon-top">
+
+    <ion-tab title="General" icon="ion-home" href="#/app/profile/general">
+        <ion-nav-view name="profile-tab"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="About" icon="ion-ios-information" href="#/tab/about">
+        <ion-nav-view name="profile-tab"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Contact" icon="ion-ios-world" ui-sref="tabs.contact">
+        <ion-nav-view name="profile-tab"></ion-nav-view>
+    </ion-tab>
+
+</ion-tabs>
+
+<!-- <ion-view view-title="Profile">
+  <ion-content>
+
+    <ion-tabs class="tabs-icon-only">
+
+        <ion-tab title="General" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+            <ion-nav-view>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">First Name</span>
+                <input type="text" ng-model="profileData.firstName" placeholder="First Name">
+              </label>
+
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Last Name</span>
+                <input type="text" ng-model="profileData.lastName" placeholder="Last Name">
+              </label>
+
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Email</span>
+                <input type="email" ng-model="profileData.email" placeholder="Email">
+              </label>
+            </ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Experience" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+            <ion-nav-view>
+              <label class="item item-input item-floating-label">
+                <span class="input-label">Experience</span>
+                <div class="row">
+                  <div class="col"><input type="text" ng-model="profileData.experience.years" placeholder="Years"></div>
+                  <div class="col"><input type="number" min="0" max="12" ng-model="profileData.experience.months" placeholder="Months"></div>
+                </div>
+              </label>
+            </ion-nav-view>
+        </ion-tab>
+
+    </ion-tabs>
+
+  </ion-content>
+</ion-view> -->
