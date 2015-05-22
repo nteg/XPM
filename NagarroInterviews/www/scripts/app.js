@@ -4,7 +4,7 @@
 // 'interview' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'interview.controllers' is found in controllers.js
-angular.module('interview', ['ionic', 'interview.controllers'])
+angular.module('interview', ['ionic', 'interview.controllers', 'interview.directives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,33 +22,38 @@ angular.module('interview', ['ionic', 'interview.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('tabs', {
-      url: '/tab',
-      controller: 'TabsCtrl',
-      templateUrl: 'templates/tabs.html'
+    .state('profile', {
+      url: '/profile',
+      controller: 'ProfileCtrl',
+      templateUrl: 'templates/profile.html'
     })
-    .state('tabs.home', {
-      url: '/home',
+    .state('profile.general', {
+      url: '/general',
       views: {
-        'home-tab': {
-          templateUrl: 'templates/home.html',
-          controller: 'HomeTabCtrl'
+        'general-tab': {
+          templateUrl: 'templates/profile/general.html',
+          controller: 'ProfileGeneralCtrl'
         }
       }
     })
-    .state('tabs.settings', {
-      url: '/settings',
+    .state('profile.professional', {
+      url: '/professional',
       views: {
-        'settings-tab': {
-          templateUrl: 'templates/settings.html'
+        'professional-tab': {
+          templateUrl: 'templates/profile/professional.html',
+          controller: 'ProfileProffCtrl'
         }
       }
     })
-    .state('about', {
-      url: '/about',
-      controller: 'AboutCtrl',
-      templateUrl: 'templates/about.html'
+    .state('profile.skills', {
+      url: '/skills',
+      views: {
+        'skills-tab': {
+          templateUrl: 'templates/profile/skills.html',
+          controller: 'ProfileSkillsCtrl'
+        }
+      }
     });
 
-  $urlRouterProvider.otherwise('/tab');
+  $urlRouterProvider.otherwise('/profile/general');
 });
