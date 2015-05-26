@@ -1,48 +1,137 @@
-angular.module('starter.controllers', [])
+angular.module('interview.controllers', ['interview.services'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-  // Form data for the login modal
-  $scope.loginData = {};
+.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate', '$ionicPopup', 'userService', function($scope, $ionicSideMenuDelegate, $ionicPopup, userService) {
 
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
+    'use strict';
 
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
+    $scope.openMenu = function () {
+        $ionicSideMenuDelegate.toggleLeft();
+    };
 
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
+    $scope.showAlert = function(options) {
+        var alertPopup = $ionicPopup.alert({
+            title: options.title || 'Alert',
+            template: options.template || 'It might taste good.'
+        });
+        alertPopup.then(function(res) {
+            // console.log('Thank you for not eating my delicious ice cream cone');
+        });
+    };
 
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
+    /*$ionicPopover.fromTemplateUrl('templates/popover.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(popover) {
+        $scope.popover = popover;
+    });
+    $scope.openPopover = function(options) {
+        $scope.popOverOptions = {};
+        $scope.popOverOptions.title = options.title || 'Alert';
+        $scope.popOverOptions.message = options.message || '';
+        $scope.popover.show();
+    };
+    $scope.closePopover = function() {
+        $scope.popover.hide();
+    };
 
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.popover.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('popover.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('popover.removed', function() {
+        // Execute action
+    });*/
+}])
+
+.controller('ProfileCtrl', ['$scope', 'userService', function($scope, userService) {
+
+}])
+
+.controller('SignupCtrl', ['$scope', '$state', 'userService', function($scope, $state, userService) {
+
+    'use strict';
+
+    // console.log(userService);
+
+    // function to submit the form after all validation has occurred
+    $scope.doSignup = function(form) {
+        var _this = this;
+        $scope.submitted = true;
+        $scope.email = '';
+        $scope.password = '';
+
+        // check to make sure the form is completely valid
+        if (form.$valid) {
+            userService.signUp(_this.email, _this.password, function (err, response) {
+                console.log(err, response);
+                if (err) {
+                    if (err.name === 'conflict') {
+                        // "email" already exists, choose another username
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'This user is already registered!'
+                        });
+                    } else if (err.name === 'forbidden') {
+                        // invalid username
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'This is invalid username.'
+                        });
+                    } else {
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'Oops! Something went wrong.'
+                        });
+                    }
+                } else if (response && response.ok && response.ok === true) {
+                    $state.go('profile');
+                }
+            });
+        }
+    };
+
+}])
+
+.controller('LoginCtrl', function($scope) {
+
+    'use strict';
+
+    // function to submit the form after all validation has occurred
+    $scope.doLogin = function(isValid) {
+        $scope.submitted = true;
+
+        // check to make sure the form is completely valid
+        if (isValid) {
+            alert('our form is amazing');
+        }
+    };
+
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('ProfileGeneralCtrl', function($scope) {
+
+  $scope.profileData = {
+    firstName: 'Arvind',
+    lastName: 'Bhardwaj',
+    email: 'bhardwajsonheight@gmail.com',
+    experience: {
+      years: 5,
+      months: 2
+    }
+  };
+
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+.controller('ProfileProffCtrl', function($scope, $ionicSideMenuDelegate) {
+
+})
+
+.controller('ProfileSkillsCtrl', function($scope, $ionicSideMenuDelegate) {
+
+})
+;

@@ -523,7 +523,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('init', [
-    //'clean',
+    'clean',
     'ngconstant:development',
     'wiredep',
     'concurrent:server',
@@ -534,7 +534,7 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('compress', [
-    //'clean',
+    'clean',
     'ngconstant:production',
     'wiredep',
     'useminPrepare',

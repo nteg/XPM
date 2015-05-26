@@ -4,7 +4,7 @@
 // 'interview' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'interview.controllers' is found in controllers.js
-angular.module('interview', ['ionic', 'interview.controllers', 'interview.directives'])
+angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interview.directives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,8 +20,23 @@ angular.module('interview', ['ionic', 'interview.controllers', 'interview.direct
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, ENV) {
+
+  window.remoteDB = new PouchDB(ENV.remoteDbUrl + ENV.remoteDbName);
+  window.localDB = new PouchDB(ENV.localDbName);
+  localDB.sync(remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
+
   $stateProvider
+    .state('login', {
+      url: '/login',
+      controller: 'LoginCtrl',
+      templateUrl: 'templates/login.html'
+    })
+    .state('signup', {
+      url: '/signup',
+      controller: 'SignupCtrl',
+      templateUrl: 'templates/signup.html'
+    })
     .state('profile', {
       url: '/profile',
       controller: 'ProfileCtrl',
