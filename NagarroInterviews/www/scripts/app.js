@@ -24,7 +24,7 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
 
   window.remoteDB = new PouchDB(ENV.remoteDbUrl + ENV.remoteDbName);
   window.localDB = new PouchDB(ENV.localDbName);
-  localDB.sync(remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
+  window.localDB.sync(window.remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
 
   $stateProvider
     .state('login', {
