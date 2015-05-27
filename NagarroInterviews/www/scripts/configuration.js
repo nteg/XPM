@@ -1,7 +1,8 @@
-"use strict";
+'use strict';
 
- angular.module('config', [])
-
-.constant('ENV', {name:'development',apiEndpoint:'http://dev.yoursite.com:10000/'})
-
-;
+angular.module('config', [])
+.constant('ENV', {
+    localDbName: 'naginterviews',
+    remoteDbUrl: 'http://localhost:5984/',
+    remoteDbName: 'naginterviews'
+});

@@ -26,6 +26,9 @@
     <script src="bower_components/ionic/release/js/ionic.js"></script>
     <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
     <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+    <script src="bower_components/pouchdb/dist/pouchdb.js"></script>
+    <script src="bower_components/pouchdb-authentication/dist/pouchdb.authentication.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -36,11 +39,13 @@
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers.js"></script>
+    <script src="scripts/directives.js"></script>
     <script src="scripts/configuration.js"></script>
+    <script src="scripts/userService.js"></script>
     <!-- endbuild -->
   </head>
 
-  <body ng-app="interview">
+  <body ng-app="interview" ng-controller="AppCtrl">
 
     <ion-side-menus enable-menu-with-back-views="false">
 
@@ -55,8 +60,9 @@
         <ion-header-bar class="bar bar-header bar-dark"></ion-header-bar>
         <ion-content has-header="true">
           <ion-list>
-            <ion-item href="#/" menu-close>Profile</ion-item>
+            <ion-item href="#/profile/general" menu-close>Profile</ion-item>
             <ion-item href="#/about" menu-close>About</ion-item>
+            <ion-item href="#/signup" menu-close>SignUp</ion-item>
           </ion-list>
         </ion-content>
       </ion-side-menu>

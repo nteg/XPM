@@ -1,10 +1,10 @@
-// Ionic Starter App
+// Ionic Interview App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'interview' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+// 'interview.controllers' is found in controllers.js
+angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interview.directives'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,52 +20,55 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, ENV) {
+
+  window.remoteDB = new PouchDB(ENV.remoteDbUrl + ENV.remoteDbName);
+  window.localDB = new PouchDB(ENV.localDbName);
+  window.localDB.sync(window.remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
+
   $stateProvider
-
-  .state('app', {
-    url: "/app",
-    abstract: true,
-    templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
-  })
-
-  .state('app.search', {
-    url: "/search",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/search.html"
-      }
-    }
-  })
-
-  .state('app.browse', {
-    url: "/browse",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/browse.html"
-      }
-    }
-  })
-    .state('app.playlists', {
-      url: "/playlists",
+    .state('login', {
+      url: '/login',
+      controller: 'LoginCtrl',
+      templateUrl: 'templates/login.html'
+    })
+    .state('signup', {
+      url: '/signup',
+      controller: 'SignupCtrl',
+      templateUrl: 'templates/signup.html'
+    })
+    .state('profile', {
+      url: '/profile',
+      controller: 'ProfileCtrl',
+      templateUrl: 'templates/profile.html'
+    })
+    .state('profile.general', {
+      url: '/general',
       views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+        'general-tab': {
+          templateUrl: 'templates/profile/general.html',
+          controller: 'ProfileGeneralCtrl'
         }
       }
     })
-
-  .state('app.single', {
-    url: "/playlists/:playlistId",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
+    .state('profile.professional', {
+      url: '/professional',
+      views: {
+        'professional-tab': {
+          templateUrl: 'templates/profile/professional.html',
+          controller: 'ProfileProffCtrl'
+        }
       }
-    }
-  });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+    })
+    .state('profile.skills', {
+      url: '/skills',
+      views: {
+        'skills-tab': {
+          templateUrl: 'templates/profile/skills.html',
+          controller: 'ProfileSkillsCtrl'
+        }
+      }
+    });
+
+  $urlRouterProvider.otherwise('/profile/general');
 });
