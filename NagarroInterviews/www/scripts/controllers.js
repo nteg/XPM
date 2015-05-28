@@ -97,21 +97,52 @@ angular.module('interview.controllers', ['interview.services'])
 
 }])
 
-.controller('LoginCtrl', function($scope) {
+.controller('LoginCtrl', ['$scope', '$state', 'userService','$ionicHistory', function($scope, $state, userService,$ionicHistory) {
 
     'use strict';
+    console.log(userService);
+    $scope.signUp = function() {
+        $state.go('signup');
+        $ionicHistory.nextViewOptions({
+                disableAnimate: false,
+                disableBack: true
+            });
+    };
+
 
     // function to submit the form after all validation has occurred
     $scope.doLogin = function(isValid) {
+        var _this = this;
         $scope.submitted = true;
+        $scope.email = '';
+        $scope.password = '';
 
+        
         // check to make sure the form is completely valid
         if (isValid) {
-            alert('our form is amazing');
+            userService.login(_this.email, _this.password, function (err, response) {
+                console.log(err, response);
+                if (err) {
+                    if (err.name === 'unauthorized') {
+                        // "email" already exists, choose another username
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'Username or password incorrect!'
+                        });
+                    }else {
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'Oops! Something went wrong.'
+                        });
+                    }
+                } else if (response && response.ok && response.ok === true) {
+                    $state.go('profile');
+                }
+            });
         }
     };
 
-})
+}])
 
 .controller('ProfileGeneralCtrl', function($scope) {
 

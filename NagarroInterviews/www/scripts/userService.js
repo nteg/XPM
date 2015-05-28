@@ -10,18 +10,13 @@ angular.module('interview.services', [])
     return {
 
         signUp: function(username, pwd, callback) {
-           // remoteDB.signup(username, pwd, callback);
-            var todo = {
-            _id: new Date().toISOString(),
-            username: username,
-            password: pwd
-       		 };
-        remoteDB.put(todo, function callback(err, result) {
-            if (!err) {
-                console.log('Successfully posted a todo!');
-            }
-        });
-        }
+           remoteDB.signup(username, pwd, callback);
+          },
+        login: function(username, pwd, callback) {
+           remoteDB.login(username, pwd, callback);
+          }
+
+
 
     };
 });

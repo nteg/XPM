@@ -1,34 +1,30 @@
-<ion-view view-title="Signup">
+<ion-view view-title="Login">
     <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
     </ion-nav-buttons>
 
     <ion-content padding="true">
-        <form name="signupForm" ng-submit="doLogin(signupForm.$valid)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+        <form name="loginForm" ng-submit="doLogin(loginForm.$valid)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
             <div class="list">
-                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : signupForm.email.$invalid && !signupForm.email.$pristine && submitted }">
+                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.email.$pristine && submitted }">
                     <span class="input-label">Email</span>
                     <input type="email" name="email" placeholder="Email" ng-model="email" required>
                 </label>
-                <p ng-show="signupForm.email.$invalid && !signupForm.email.$pristine && submitted" class="help-block">Your email is invalid.</p>
+                <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine && submitted" class="help-block">Your email is invalid.</p>
 
-                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : signupForm.password.$invalid && !signupForm.password.$pristine && submitted }">
+                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine && submitted }">
                     <span class="input-label">Password</span>
                     <input type="password" name="password" placeholder="Password" ng-model="password" ng-minlength="3" ng-maxlength="15" required>
                 </label>
-                <p ng-show="signupForm.password.$error.minlength && submitted" class="help-block">Password is too short.</p>
-                <p ng-show="signupForm.password.$error.maxlength && submitted" class="help-block">Password is too long.</p>
-
-                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : signupForm.conPassword.$invalid && !signupForm.conPassword.$pristine && submitted }">
-                    <span class="input-label">Confirm Password</span>
-                    <input type="password" name="conPassword" placeholder="Confirm Password" ng-model="conPassword" compare-to="signupForm.password" ng-required>
-                </label>
-                <p ng-show="signupForm.conPassword.$error.compareTo && submitted" class="help-block">Passwords do not match.</p>
             </div>
 
             <div class="padding">
-                <button class="button button-block button-positive" type="submit">Sign Up</button>
+                <button class="button button-block button-positive" type="submit">Login</button>
             </div>
+            <p class="text-center">
+                   Dont have an account <ion-text class="balanced"> <a ng-click="signUp()">Click Here</a></ion-text>
+            </p>
+            
 
         </form>
     </ion-content>
