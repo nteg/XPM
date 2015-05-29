@@ -1,9 +1,20 @@
 angular.module('interview.controllers', ['interview.services'])
 
-.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate', '$ionicPopup', 'userService', function($scope, $ionicSideMenuDelegate, $ionicPopup, userService) {
+.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate', '$ionicPopup', 'userService','localStorageService', function($scope, $ionicSideMenuDelegate, $ionicPopup, userService,localStorageService) {
 
+localStorageService.set("LOGIN_SUCCESS",false);
     'use strict';
+    if(localStorageService.isSupported) {
+    //...
+    console.log("chal raha hai");
+    }
 
+  $scope.getItem=function (key) {
+   return localStorageService.get(key);
+  }
+  $scope.logOut=function () {
+   return localStorageService.set("LOGIN_SUCCESS",false);
+  }
     $scope.openMenu = function () {
         $ionicSideMenuDelegate.toggleLeft();
     };
@@ -97,7 +108,7 @@ angular.module('interview.controllers', ['interview.services'])
 
 }])
 
-.controller('LoginCtrl', ['$scope', '$state', 'userService','$ionicHistory', function($scope, $state, userService,$ionicHistory) {
+.controller('LoginCtrl', ['$scope', '$state', 'userService','$ionicHistory','localStorageService', function($scope, $state, userService,$ionicHistory,localStorageService) {
 
     'use strict';
     console.log(userService);
@@ -109,7 +120,7 @@ angular.module('interview.controllers', ['interview.services'])
             });
     };
 
-
+   
     // function to submit the form after all validation has occurred
     $scope.doLogin = function(isValid) {
         var _this = this;
@@ -136,7 +147,16 @@ angular.module('interview.controllers', ['interview.services'])
                         });
                     }
                 } else if (response && response.ok && response.ok === true) {
+                    
+                     localStorageService.set('EMAIL',_this.email);
+                     localStorageService.set('LOGIN_SUCCESS',true);
+
+                    
                     $state.go('profile');
+                    $ionicHistory.nextViewOptions({
+                disableAnimate: false,
+                disableBack: true
+            });
                 }
             });
         }

@@ -28,6 +28,7 @@
     <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
     <script src="bower_components/pouchdb/dist/pouchdb.js"></script>
     <script src="bower_components/pouchdb-authentication/dist/pouchdb.authentication.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     
     <!-- endbower -->
     <!-- endbuild -->
@@ -63,20 +64,23 @@
             <ion-item class="item item-icon-left" href="#/home" menu-close>
                 <i class="icon ion-home"></i>Home
             </ion-item>
-            <ion-item class="item item-icon-left" href="#/profile/general" menu-close>
+            <ion-item class="item item-icon-left" href="#/profile/general" menu-close ng-show="getItem('LOGIN_SUCCESS')==true">
                 <i class="icon ion-person"></i>Profile
             </ion-item>
-            <ion-item class="item item-icon-left" href="tel: +91 9891234567" menu-close>
+            <ion-item class="item item-icon-left" href="tel: +91 9891234567" menu-close ng-show="getItem('LOGIN_SUCCESS')==true">
                 <i class="icon ion-android-call"></i>Call HR
             </ion-item>
-            <ion-item class="item item-icon-left" menu-close href="#/query">
+            <ion-item class="item item-icon-left" menu-close href="#/query" ng-show="getItem('LOGIN_SUCCESS')==true">
                 <i class="icon ion-help"></i>Ask HR
             </ion-item>
             <ion-item class="item item-icon-left" href="#/about" menu-close>
                 <i class="icon ion-lightbulb"></i>About
             </ion-item>
-            <ion-item class="item item-icon-left" href="#/login" menu-close>
+            <ion-item class="item item-icon-left" href="#/login" menu-close ng-show="getItem('LOGIN_SUCCESS')==false">
                 <i class="icon ion-log-in"></i>Login
+            </ion-item>
+             <ion-item class="item item-icon-left" ng-click="logOut()" menu-close ng-show="getItem('LOGIN_SUCCESS')==true">
+                <i class="icon ion-log-out"></i>LogOut
             </ion-item>
           </ion-list>
         </ion-content>

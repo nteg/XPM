@@ -4,7 +4,7 @@
 // 'interview' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'interview.controllers' is found in controllers.js
-angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interview.directives'])
+angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interview.directives', 'LocalStorageModule'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,12 +20,17 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, ENV) {
+.config(function($stateProvider, $urlRouterProvider, ENV,localStorageServiceProvider) {
 
   window.remoteDB = new PouchDB(ENV.remoteDbUrl + ENV.remoteDbName);
   window.localDB = new PouchDB(ENV.localDbName);
-  remoteDB.sync(localDB, {live: true, retry: true}).on('error', console.log.bind(console));
+  window.localDB.sync(window.remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
  
+  //angular local storage testing code 
+  localStorageServiceProvider
+    .setPrefix('myApp')
+    .setStorageType('localStorage')
+    .setNotify(true, true);
 
   $stateProvider
     .state('login', {
