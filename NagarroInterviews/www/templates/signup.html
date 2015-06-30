@@ -5,6 +5,7 @@
 
     <ion-content padding="true">
         <form name="signupForm" ng-submit="doSignup(signupForm)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+
             <div class="list">
                 <label class="item item-input item-floating-label" ng-class="{ 'has-error' : signupForm.email.$invalid && !signupForm.email.$pristine && submitted }">
                     <span class="input-label">Email</span>

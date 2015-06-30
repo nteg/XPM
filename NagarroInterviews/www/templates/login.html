@@ -4,25 +4,27 @@
     </ion-nav-buttons>
 
     <ion-content padding="true">
-        <form name="loginForm" ng-submit="doLogin(loginForm)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+        <form name="loginForm" ng-submit="doLogin(loginForm.$valid)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
             <div class="list">
                 <label class="item item-input item-floating-label" ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.email.$pristine && submitted }">
                     <span class="input-label">Email</span>
                     <input type="email" name="email" placeholder="Email" ng-model="email" required>
                 </label>
                 <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine && submitted" class="help-block">Your email is invalid.</p>
-                <p ng-show="loginForm.email.$error.required && submitted" class="help-block">Email is required.</p>
 
-                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : loginForm.password.$error.required && submitted }">
+                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine && submitted }">
                     <span class="input-label">Password</span>
-                    <input type="password" name="password" placeholder="Password" ng-model="password" required>
+                    <input type="password" name="password" placeholder="Password" ng-model="password" ng-minlength="3" ng-maxlength="15" required>
                 </label>
-                <p ng-show="loginForm.password.$error.required && submitted" class="help-block">Password is required.</p>
             </div>
 
             <div class="padding">
                 <button class="button button-block button-positive" type="submit">Login</button>
             </div>
+            <p class="text-center">
+                   Dont have an account <ion-text class="balanced"> <a ng-click="signUp()">Click Here</a></ion-text>
+            </p>
+            
 
         </form>
     </ion-content>

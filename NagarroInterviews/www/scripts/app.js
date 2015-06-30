@@ -47,10 +47,13 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
 
   window.remoteDB = new PouchDB(ENV.remoteDbUrl + ENV.remoteDbName);
   window.localDB = new PouchDB(ENV.localDbName);
-  // window.localDB.sync(window.remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
-
+  window.localDB.sync(window.remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
+ 
+  //angular local storage testing code 
   localStorageServiceProvider
-    .setPrefix('ngInt');
+    .setPrefix('ngInt')
+    .setStorageType('localStorage')
+    .setNotify(true, true);
 
   $stateProvider
     .state('login', {
@@ -94,6 +97,14 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
           controller: 'ProfileSkillsCtrl'
         }
       }
+    })
+    .state('home', {
+      url: '/home',
+      templateUrl: 'templates/home.html'
+    })
+    .state('query', {
+      url: '/query',
+      templateUrl: 'templates/query.html'
     });
 
   $urlRouterProvider.otherwise('/profile/general');

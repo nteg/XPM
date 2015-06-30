@@ -1,0 +1,22 @@
+<ion-view view-title="HR Query">
+<ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+    </ion-nav-buttons>
+    <ion-content>
+     <ion-list>
+      <ion-item ng-repeat="comment in comments">
+           <label><b>User 1 :</b></label>
+            <i>{{comment.desc}}</i>
+    </ion-item>
+    </ion-list>
+    <div class="list list-inset">
+                <label class="item item-input">
+                    <textarea ng-model="newComment.desc"></textarea>
+                </label>
+                <br>
+                 <button class="button button-positive icon icon-left" ng-click="addComment()"><i class="icon ion-android-share"></i> Share</button>
+                    
+               
+    </div>
+    </ion-content>
+</ion-view>
