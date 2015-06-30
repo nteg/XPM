@@ -60,9 +60,10 @@
         <ion-header-bar class="bar bar-header bar-dark"></ion-header-bar>
         <ion-content has-header="true">
           <ion-list>
-            <ion-item href="#/profile/general" menu-close>Profile</ion-item>
+            <ion-item href="#/profile/general" menu-close ng-show="isLoggedIn">Profile</ion-item>
             <ion-item href="#/about" menu-close>About</ion-item>
-            <ion-item href="#/signup" menu-close>SignUp</ion-item>
+            <ion-item href="#/signup" menu-close ng-show="!isLoggedIn || !isSignedUp">SignUp</ion-item>
+            <ion-item href="#/login" menu-close ng-show="!isLoggedIn">Login</ion-item>
           </ion-list>
         </ion-content>
       </ion-side-menu>
