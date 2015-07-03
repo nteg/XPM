@@ -2,10 +2,6 @@
 
  angular.module('config', [])
 
-.constant('ENV', {
-    remoteDbName: 'naginterviews',
-    remoteDbUrl: 'http://localhost:5984/',
-    localDbName: 'naginterviews'
-})
+.constant('ENV', {name:'development',apiEndpoint:'http://dev.yoursite.com:10000/'})
 
 ;

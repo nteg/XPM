@@ -4,7 +4,7 @@
 // 'interview' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'interview.controllers' is found in controllers.js
-angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interview.directives', 'LocalStorageModule'])
+angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interview.directives', 'LocalStorageModule', 'ionMdInput'])
 
 .run(['$rootScope', '$ionicPlatform', '$location', '$state', 'userService', function($rootScope, $ionicPlatform, $location, $state, userService) {
 
@@ -48,12 +48,9 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
   window.remoteDB = new PouchDB(ENV.remoteDbUrl + ENV.remoteDbName);
   window.localDB = new PouchDB(ENV.localDbName);
   window.localDB.sync(window.remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
- 
-  //angular local storage testing code 
+
   localStorageServiceProvider
-    .setPrefix('ngInt')
-    .setStorageType('localStorage')
-    .setNotify(true, true);
+    .setPrefix('ngInt');
 
   $stateProvider
     .state('login', {
@@ -97,14 +94,6 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
           controller: 'ProfileSkillsCtrl'
         }
       }
-    })
-    .state('home', {
-      url: '/home',
-      templateUrl: 'templates/home.html'
-    })
-    .state('query', {
-      url: '/query',
-      templateUrl: 'templates/query.html'
     });
 
   $urlRouterProvider.otherwise('/profile/general');

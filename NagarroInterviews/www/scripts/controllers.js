@@ -1,23 +1,11 @@
 angular.module('interview.controllers', ['interview.services'])
 
-.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate', '$ionicPopup', 'userService','localStorageService', function($scope, $ionicSideMenuDelegate, $ionicPopup, userService,localStorageService) {
+.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate', '$ionicPopup', 'userService', function($scope, $ionicSideMenuDelegate, $ionicPopup, userService) {
 
-localStorageService.set("LOGIN_SUCCESS",false);
     'use strict';
-    if(localStorageService.isSupported) {
-    //...
-    console.log("chal raha hai");
-    }
 
     $scope.isLoggedIn = userService.isLoggedIn();
     $scope.isSignedUp = userService.isSignedUp();
-
-  $scope.getItem=function (key) {
-   return localStorageService.get(key);
-  }
-  $scope.logOut=function () {
-   return localStorageService.set("LOGIN_SUCCESS",false);
-  }
 
     $scope.openMenu = function () {
         $ionicSideMenuDelegate.toggleLeft();
@@ -127,26 +115,15 @@ localStorageService.set("LOGIN_SUCCESS",false);
 
 }])
 
-.controller('LoginCtrl', ['$scope', '$state', 'userService','$ionicHistory','localStorageService', function($scope, $state, userService,$ionicHistory,localStorageService) {
+.controller('LoginCtrl', ['$scope', '$state', 'localStorageService', 'userService', function($scope, $state, localStorageService, userService) {
 
     'use strict';
-    console.log(userService);
-    $scope.signUp = function() {
-        $state.go('signup');
-        $ionicHistory.nextViewOptions({
-                disableAnimate: false,
-                disableBack: true
-            });
-    };
 
-   
     // function to submit the form after all validation has occurred
-    $scope.doLogin = function(isValid) {
-        var _this = this;
+    $scope.doLogin = function(form) {
         $scope.submitted = true;
-        $scope.email = '';
-        $scope.password = '';
-        
+        var _this = this;
+
         // check to make sure the form is completely valid
         if (form.$valid) {
             userService.logIn(_this.email, _this.password, function(err, response) {
@@ -167,10 +144,6 @@ localStorageService.set("LOGIN_SUCCESS",false);
                     localStorageService.set('isLoggedIn', 1);
                     localStorageService.set('userInfo', response);
                     $state.go('profile');
-                    $ionicHistory.nextViewOptions({
-                        disableAnimate: false,
-                        disableBack: true
-                    });
                 }
             });
         }
