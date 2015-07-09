@@ -41,13 +41,12 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
     });
 }])
 
-.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', 'DB', function($stateProvider, $urlRouterProvider, localStorageServiceProvider, DB) {
+.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', 'ENV', function($stateProvider, $urlRouterProvider, localStorageServiceProvider, ENV) {
 
   'use strict';
 
-  window.remoteDB = new PouchDB(DB.remote.url + DB.remote.name);
-  console.log(DB.remote.url + DB.remote.name)
-  window.localDB = new PouchDB(DB.local.name);
+  window.remoteDB = new PouchDB(ENV.DB.remote.url + ENV.DB.remote.name);
+  window.localDB = new PouchDB(ENV.DB.local.name);
   window.localDB.sync(window.remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
 
   localStorageServiceProvider
