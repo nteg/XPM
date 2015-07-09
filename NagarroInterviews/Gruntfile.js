@@ -1,4 +1,4 @@
-// Generated on 2015-05-15 using generator-ionic 0.7.3
+// Generated on 2015-07-03 using generator-ionic 0.7.3
 'use strict';
 
 var _ = require('lodash');
@@ -161,7 +161,7 @@ module.exports = function (grunt) {
       }
     },
 
-
+    
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
       options: {
@@ -190,7 +190,7 @@ module.exports = function (grunt) {
         }
       }
     },
-
+    
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -549,7 +549,7 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('coverage',
+  grunt.registerTask('coverage', 
     ['karma:continuous',
     'connect:coverage:keepalive'
   ]);
