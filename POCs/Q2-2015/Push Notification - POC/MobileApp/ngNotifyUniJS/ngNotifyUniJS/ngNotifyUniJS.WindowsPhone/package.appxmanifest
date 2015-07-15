@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="18143Ranvir.Singh.ngNotifyWPCS" Version="1.1.0.0" Publisher="CN=93D64BBE-B8B6-4D9C-9CCF-A23F6420469A" />
+  <mp:PhoneIdentity PhoneProductId="bb8d7212-2cb0-49c5-8d59-10d58787ec7f" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>ngNotifyWPCS</DisplayName>
+    <PublisherDisplayName>nuMen</PublisherDisplayName>
+    <Logo>images\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <m3:VisualElements DisplayName="ngNotifyWPCS" Square150x150Logo="images\Square150x150Logo.png" Square44x44Logo="images\Square44x44Logo.png" Description="ngNotifyUniJS.WindowsPhone" ForegroundText="light" BackgroundColor="transparent" ToastCapable="true">
+        <m3:DefaultTile Wide310x150Logo="images\Wide310x150Logo.png" Square71x71Logo="images\Square71x71Logo.png">
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="images\SplashScreen.png" />
+      </m3:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+  </Capabilities>
+</Package>
