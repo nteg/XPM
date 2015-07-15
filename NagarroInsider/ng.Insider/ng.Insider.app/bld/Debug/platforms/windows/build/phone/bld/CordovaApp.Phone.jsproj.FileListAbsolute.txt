@@ -1,0 +1,15 @@
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\Debug\AnyCPU\AppxManifest.xml
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\Debug\AnyCPU\CordovaApp.Phone.build.appxrecipe
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\priconfig.xml
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\priconfig.xml.intermediate
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\layout.resfiles
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\layout.resfiles.intermediate
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\resources.resfiles
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\resources.resfiles.intermediate
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\pri.resfiles
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\pri.resfiles.intermediate
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\qualifiers.txt
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\qualifiers.txt.intermediate
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\MultipleQualifiersPerDimensionFound.txt
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\bld\ProjectArchitectures.txt
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\build\phone\Debug\AnyCPU\ReverseMap\resources.pri
