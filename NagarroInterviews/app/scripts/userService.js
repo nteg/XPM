@@ -3,7 +3,7 @@ angular.module('interview.services', [])
 .factory('userService', ['localStorageService', function(localStorageService){
 
     'use strict';
-console.log(localStorageService);
+
     var localDb = window.localDB,
         remoteDB = window.remoteDB;
 
@@ -15,6 +15,11 @@ console.log(localStorageService);
 
         logIn: function(username, pwd, callback) {
             remoteDB.login(username, pwd, callback);
+        },
+
+        logOut: function(callback) {
+            localStorageService.remove('isLoggedIn', 'userInfo', 'isSignedUp');
+            remoteDB.logout(callback);
         },
 
         getCurrentUser: function() {

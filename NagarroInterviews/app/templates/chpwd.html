@@ -1,0 +1,28 @@
+<ion-view view-title="Signup">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+    </ion-nav-buttons>
+
+    <ion-content padding="true">
+        <form name="chpwdForm" ng-submit="chPwd(chpwdForm)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+            <div class="list">
+                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : chpwdForm.oldpassword.$invalid && !chpwdForm.oldpassword.$pristine && submitted }">
+                    <span class="input-label">Old Password</span>
+                    <input type="oldpassword" name="oldpassword" placeholder="Password" ng-model="oldpassword" ng-minlength="3" ng-maxlength="15" ng-required>
+                </label>
+
+                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : chpwdForm.newpassword.$invalid && !chpwdForm.newpassword.$pristine && submitted }">
+                    <span class="input-label">New Password</span>
+                    <input type="newpassword" name="newpassword" placeholder="Password" ng-model="newpassword" ng-minlength="3" ng-maxlength="15" ng-required>
+                </label>
+                <p ng-show="chpwdForm.newpassword.$error.minlength && submitted" class="help-block">Password is too short.</p>
+                <p ng-show="chpwdForm.newpassword.$error.maxlength && submitted" class="help-block">Password is too long.</p>
+            </div>
+
+            <div class="padding">
+                <button class="button button-block button-positive" type="submit">Change</button>
+            </div>
+
+        </form>
+    </ion-content>
+</ion-modal-view>

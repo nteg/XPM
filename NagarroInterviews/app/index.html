@@ -65,6 +65,8 @@
             <ion-item href="#/about" menu-close>About</ion-item>
             <ion-item href="#/signup" menu-close ng-show="!isLoggedIn || !isSignedUp">SignUp</ion-item>
             <ion-item href="#/login" menu-close ng-show="!isLoggedIn">Login</ion-item>
+            <ion-item href="#/login" menu-close ng-show="isLoggedIn" ng-click="logOut()">Logout</ion-item>
+            <ion-item href="#/chpwd" menu-close ng-show="isLoggedIn">Change Password</ion-item>
           </ion-list>
         </ion-content>
       </ion-side-menu>

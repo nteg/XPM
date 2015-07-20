@@ -7,9 +7,14 @@
         <label class="item item-input item-floating-label">
             <span class="input-label">Experience</span>
             <div class="row">
-                <div class="col"><input type="text" ng-model="profileData.experience.years" placeholder="Years"></div>
+                <div class="col"><input type="number" min="0" ng-model="profileData.experience.years" placeholder="Years"></div>
                 <div class="col"><input type="number" min="0" max="12" ng-model="profileData.experience.months" placeholder="Months"></div>
             </div>
+        </label>
+
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Current Company</span>
+            <input type="text" ng-model="profileData.company" placeholder="Company">
         </label>
     </ion-content>
 </ion-view>

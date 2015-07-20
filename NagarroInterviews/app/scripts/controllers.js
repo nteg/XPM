@@ -1,6 +1,6 @@
 angular.module('interview.controllers', ['interview.services'])
 
-.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate', '$ionicPopup', 'userService', function($scope, $ionicSideMenuDelegate, $ionicPopup, userService) {
+.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate', '$state', '$ionicPopup', 'userService', function($scope, $ionicSideMenuDelegate, $state, $ionicPopup, userService) {
 
     'use strict';
 
@@ -18,6 +18,19 @@ angular.module('interview.controllers', ['interview.services'])
         });
         alertPopup.then(function(res) {
             // console.log('Thank you for not eating my delicious ice cream cone');
+        });
+    };
+
+    $scope.logOut = function() {
+        userService.logOut(function (err, response) {
+            if (err) {
+                $scope.showAlert({
+                    title: 'Alert',
+                    template: 'Oops! Something went wrong.'
+                });
+            } else if (response && response.ok && response.ok === true) {
+                $state.go('login');
+            }
         });
     };
 
@@ -143,6 +156,40 @@ angular.module('interview.controllers', ['interview.services'])
                 } else if (response && response.ok && response.ok === true) {
                     localStorageService.set('isLoggedIn', 1);
                     localStorageService.set('userInfo', response);
+                    $state.go('profile');
+                }
+            });
+        }
+    };
+
+}])
+
+.controller('ChpwdCtrl', ['$scope', '$state', 'localStorageService', 'userService', function($scope, $state, localStorageService, userService) {
+
+    'use strict';
+
+    // function to submit the form after all validation has occurred
+    $scope.chPwd = function(form) {
+        $scope.submitted = true;
+        var _this = this;
+
+        // check to make sure the form is completely valid
+        if (form.$valid) {
+            userService.chPwd(_this.oldpassword, _this.newpassword, function(err, response) {
+                console.log(err, response);
+                if (err) {
+                    if (err.name === 'not_found') {
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'You are not authorized to do this.'
+                        });
+                    } else {
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'Oops! Something went wrong.'
+                        });
+                    }
+                } else if (response && response.ok && response.ok === true) {
                     $state.go('profile');
                 }
             });

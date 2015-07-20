@@ -18,5 +18,10 @@
             <span class="input-label">Email</span>
             <input type="email" ng-model="profileData.email" placeholder="Email">
         </label>
+
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Phone</span>
+            <input type='tel' pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}' ng-model="profileData.phone" placeholder="Phone">
+        </label>
     </ion-content>
 </ion-view>
