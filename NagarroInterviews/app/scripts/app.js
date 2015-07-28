@@ -4,10 +4,14 @@
 // 'interview' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'interview.controllers' is found in controllers.js
-angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interview.directives'])
+angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interview.directives', 'LocalStorageModule', 'ionMdInput', 'pouchdb'])
 
-.run(function($ionicPlatform) {
+.run(['$rootScope', '$ionicPlatform', '$location', '$state', 'userService', function($rootScope, $ionicPlatform, $location, $state, userService) {
+
   $ionicPlatform.ready(function() {
+
+    'use strict';
+
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -18,13 +22,35 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
       StatusBar.styleDefault();
     }
   });
-})
 
-.config(function($stateProvider, $urlRouterProvider, ENV) {
+    $rootScope.$on( '$stateChangeStart', function(e, toState , toParams, fromState, fromParams) {
+        var isLogin = toState.name === 'login',
+            isSignUp = toState.name === 'signup',
+            isAbout = toState.name === 'about';
+        if (isLogin || isSignUp || isAbout) {
+          return; // no need to redirect
+        }
 
-  window.remoteDB = new PouchDB(ENV.remoteDbUrl + ENV.remoteDbName);
-  window.localDB = new PouchDB(ENV.localDbName);
+        // now, redirect only not authenticated
+        var isLoggedIn = userService.isLoggedIn();
+
+        if (!isLoggedIn) {
+            e.preventDefault(); // stop current execution
+            $state.go('login'); // go to login
+        }
+    });
+}])
+
+.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', 'ENV', function($stateProvider, $urlRouterProvider, localStorageServiceProvider, ENV) {
+
+  'use strict';
+
+  window.remoteDB = new PouchDB(ENV.DB.remote.url + ENV.DB.remote.name);
+  window.localDB = new PouchDB(ENV.DB.local.name);
   window.localDB.sync(window.remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
+
+  localStorageServiceProvider
+    .setPrefix('ngInt');
 
   $stateProvider
     .state('login', {
@@ -36,6 +62,11 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
       url: '/signup',
       controller: 'SignupCtrl',
       templateUrl: 'templates/signup.html'
+    })
+    .state('chpwd', {
+      url: '/chpwd',
+      controller: 'ChpwdCtrl',
+      templateUrl: 'templates/chpwd.html'
     })
     .state('profile', {
       url: '/profile',
@@ -71,4 +102,5 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
     });
 
   $urlRouterProvider.otherwise('/profile/general');
-});
+}])
+;

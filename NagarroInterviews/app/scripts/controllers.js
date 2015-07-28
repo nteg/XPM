@@ -1,8 +1,11 @@
 angular.module('interview.controllers', ['interview.services'])
 
-.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate', '$ionicPopup', 'userService', function($scope, $ionicSideMenuDelegate, $ionicPopup, userService) {
+.controller('AppCtrl', ['$scope', '$ionicSideMenuDelegate', '$state', '$ionicPopup', 'userService', function($scope, $ionicSideMenuDelegate, $state, $ionicPopup, userService) {
 
     'use strict';
+
+    $scope.isLoggedIn = userService.isLoggedIn();
+    $scope.isSignedUp = userService.isSignedUp();
 
     $scope.openMenu = function () {
         $ionicSideMenuDelegate.toggleLeft();
@@ -15,6 +18,19 @@ angular.module('interview.controllers', ['interview.services'])
         });
         alertPopup.then(function(res) {
             // console.log('Thank you for not eating my delicious ice cream cone');
+        });
+    };
+
+    $scope.logOut = function() {
+        userService.logOut(function (err, response) {
+            if (err) {
+                $scope.showAlert({
+                    title: 'Alert',
+                    template: 'Oops! Something went wrong.'
+                });
+            } else if (response && response.ok && response.ok === true) {
+                $state.go('login');
+            }
         });
     };
 
@@ -48,15 +64,13 @@ angular.module('interview.controllers', ['interview.services'])
     });*/
 }])
 
-.controller('ProfileCtrl', ['$scope', 'userService', function($scope, userService) {
+.controller('ProfileCtrl', ['$scope', '$state', 'localStorageService', 'userService', function($scope, $state, localStorageService, userService) {
 
 }])
 
-.controller('SignupCtrl', ['$scope', '$state', 'userService', function($scope, $state, userService) {
+.controller('SignupCtrl', ['$scope', '$state', 'localStorageService', 'userService', function($scope, $state, localStorageService, userService) {
 
     'use strict';
-
-    // console.log(userService);
 
     // function to submit the form after all validation has occurred
     $scope.doSignup = function(form) {
@@ -68,7 +82,6 @@ angular.module('interview.controllers', ['interview.services'])
         // check to make sure the form is completely valid
         if (form.$valid) {
             userService.signUp(_this.email, _this.password, function (err, response) {
-                console.log(err, response);
                 if (err) {
                     if (err.name === 'conflict') {
                         // "email" already exists, choose another username
@@ -89,6 +102,74 @@ angular.module('interview.controllers', ['interview.services'])
                         });
                     }
                 } else if (response && response.ok && response.ok === true) {
+                    localStorageService.set('isSignedUp', 1);
+                    userService.createUser({email: _this.email}).then(function(res) {
+                        if (res.ok) {
+                            userService.logIn(_this.email, _this.password, function(err, response) {
+                                if (err) {
+                                    if (err.name === "unauthorized") {
+                                        $scope.showAlert({
+                                            title: 'Alert',
+                                            template: 'Incorrect email or password.'
+                                        });
+                                    } else {
+                                        $scope.showAlert({
+                                            title: 'Alert',
+                                            template: 'Oops! Something went wrong.'
+                                        });
+                                    }
+                                } else if (response && response.ok && response.ok === true) {
+                                    localStorageService.set('isLoggedIn', 1);
+                                    $state.go('profile');
+                                }
+                            });
+                        } else {
+                            $scope.showAlert({
+                                title: 'Alert',
+                                template: 'Oops! Something went wrong.'
+                            });
+                        }
+                    }, function(err) {
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'Oops! Something went wrong.'
+                        });
+                    });
+                }
+            });
+        }
+    };
+
+}])
+
+.controller('LoginCtrl', ['$scope', '$state', 'localStorageService', 'userService', function($scope, $state, localStorageService, userService) {
+
+    'use strict';
+
+    // function to submit the form after all validation has occurred
+    $scope.doLogin = function(form) {
+        $scope.submitted = true;
+        var _this = this;
+
+        // check to make sure the form is completely valid
+        if (form.$valid) {
+            userService.logIn(_this.email, _this.password, function(err, response) {
+                console.log(err, response);
+                if (err) {
+                    if (err.name === "unauthorized") {
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'Incorrect email or password.'
+                        });
+                    } else {
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'Oops! Something went wrong.'
+                        });
+                    }
+                } else if (response && response.ok && response.ok === true) {
+                    localStorageService.set('isLoggedIn', 1);
+                    localStorageService.set('userInfo', response);
                     $state.go('profile');
                 }
             });
@@ -97,38 +178,78 @@ angular.module('interview.controllers', ['interview.services'])
 
 }])
 
-.controller('LoginCtrl', function($scope) {
+.controller('ChpwdCtrl', ['$scope', '$state', 'localStorageService', 'userService', function($scope, $state, localStorageService, userService) {
 
     'use strict';
 
     // function to submit the form after all validation has occurred
-    $scope.doLogin = function(isValid) {
+    $scope.chPwd = function(form) {
         $scope.submitted = true;
+        var _this = this;
 
         // check to make sure the form is completely valid
-        if (isValid) {
-            alert('our form is amazing');
+        if (form.$valid) {
+            userService.chPwd(_this.oldpassword, _this.newpassword, function(err, response) {
+                console.log(err, response);
+                if (err) {
+                    if (err.name === 'not_found') {
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'You are not authorized to do this.'
+                        });
+                    } else {
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'Oops! Something went wrong.'
+                        });
+                    }
+                } else if (response && response.ok && response.ok === true) {
+                    $state.go('profile');
+                }
+            });
         }
     };
 
-})
+}])
 
-.controller('ProfileGeneralCtrl', function($scope) {
+.controller('ProfileGeneralCtrl', ['$scope', '$state', 'userService', function($scope, $state, userService) {
 
-  $scope.profileData = {
-    firstName: 'Arvind',
-    lastName: 'Bhardwaj',
-    email: 'bhardwajsonheight@gmail.com',
-    experience: {
-      years: 5,
-      months: 2
-    }
-  };
+    $scope.profileData = {};
+/*    $scope.profileData = {
+        firstName: 'Arvind',
+        lastName: 'Bhardwaj',
+        email: 'bhardwajsonheight@gmail.com',
+        experience: {
+            years: 5,
+            months: 2
+        }
+    };*/
 
-})
+    userService.getCurrentUser().then(function(res) {
+        $scope.profileData = res;
+    });
+
+    $scope.saveProfGen = function(form) {
+        var _this = this;
+
+        // check to make sure the form is completely valid
+        if (form.$valid) {
+            $scope.profileData = angular.extend($scope.profileData, _this.profileData);
+            var promise = userService.saveProfileGen($scope.profileData);
+            promise.then(function(res) {
+                console.log(res);
+                if (!res.ok) {
+                }
+            });
+        }
+    };
+
+}])
 
 .controller('ProfileProffCtrl', function($scope, $ionicSideMenuDelegate) {
-
+    $scope.profileData = {
+        resume: {}
+    };
 })
 
 .controller('ProfileSkillsCtrl', function($scope, $ionicSideMenuDelegate) {

@@ -21,3 +21,7 @@ label.item.valid-lr {
   padding: 2px 0 2px 16px;
   color: red;
 }
+
+#file {
+  display:none;  
+}
