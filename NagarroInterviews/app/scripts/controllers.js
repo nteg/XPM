@@ -103,23 +103,37 @@ angular.module('interview.controllers', ['interview.services'])
                     }
                 } else if (response && response.ok && response.ok === true) {
                     localStorageService.set('isSignedUp', 1);
-                    userService.logIn(_this.email, _this.password, function(err, response) {
-                        if (err) {
-                            if (err.name === "unauthorized") {
-                                $scope.showAlert({
-                                    title: 'Alert',
-                                    template: 'Incorrect email or password.'
-                                });
-                            } else {
-                                $scope.showAlert({
-                                    title: 'Alert',
-                                    template: 'Oops! Something went wrong.'
-                                });
-                            }
-                        } else if (response && response.ok && response.ok === true) {
-                            localStorageService.set('isLoggedIn', 1);
-                            $state.go('profile');
+                    userService.createUser({email: _this.email}).then(function(res) {
+                        if (res.ok) {
+                            userService.logIn(_this.email, _this.password, function(err, response) {
+                                if (err) {
+                                    if (err.name === "unauthorized") {
+                                        $scope.showAlert({
+                                            title: 'Alert',
+                                            template: 'Incorrect email or password.'
+                                        });
+                                    } else {
+                                        $scope.showAlert({
+                                            title: 'Alert',
+                                            template: 'Oops! Something went wrong.'
+                                        });
+                                    }
+                                } else if (response && response.ok && response.ok === true) {
+                                    localStorageService.set('isLoggedIn', 1);
+                                    $state.go('profile');
+                                }
+                            });
+                        } else {
+                            $scope.showAlert({
+                                title: 'Alert',
+                                template: 'Oops! Something went wrong.'
+                            });
                         }
+                    }, function(err) {
+                        $scope.showAlert({
+                            title: 'Alert',
+                            template: 'Oops! Something went wrong.'
+                        });
                     });
                 }
             });
@@ -198,22 +212,44 @@ angular.module('interview.controllers', ['interview.services'])
 
 }])
 
-.controller('ProfileGeneralCtrl', function($scope) {
+.controller('ProfileGeneralCtrl', ['$scope', '$state', 'userService', function($scope, $state, userService) {
 
-  $scope.profileData = {
-    firstName: 'Arvind',
-    lastName: 'Bhardwaj',
-    email: 'bhardwajsonheight@gmail.com',
-    experience: {
-      years: 5,
-      months: 2
-    }
-  };
+    $scope.profileData = {};
+/*    $scope.profileData = {
+        firstName: 'Arvind',
+        lastName: 'Bhardwaj',
+        email: 'bhardwajsonheight@gmail.com',
+        experience: {
+            years: 5,
+            months: 2
+        }
+    };*/
 
-})
+    userService.getCurrentUser().then(function(res) {
+        $scope.profileData = res;
+    });
+
+    $scope.saveProfGen = function(form) {
+        var _this = this;
+
+        // check to make sure the form is completely valid
+        if (form.$valid) {
+            $scope.profileData = angular.extend($scope.profileData, _this.profileData);
+            var promise = userService.saveProfileGen($scope.profileData);
+            promise.then(function(res) {
+                console.log(res);
+                if (!res.ok) {
+                }
+            });
+        }
+    };
+
+}])
 
 .controller('ProfileProffCtrl', function($scope, $ionicSideMenuDelegate) {
-
+    $scope.profileData = {
+        resume: {}
+    };
 })
 
 .controller('ProfileSkillsCtrl', function($scope, $ionicSideMenuDelegate) {

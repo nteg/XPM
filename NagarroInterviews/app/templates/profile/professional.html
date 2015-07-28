@@ -2,6 +2,9 @@
     <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
     </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <input type="submit" class="button" form="profGenForm" value="Save">
+    </ion-nav-buttons>
 
     <ion-content padding="true">
         <label class="item item-input item-floating-label">
@@ -16,5 +19,11 @@
             <span class="input-label">Current Company</span>
             <input type="text" ng-model="profileData.company" placeholder="Company">
         </label>
+
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Resume</span>
+            <input type="file" id="resume" name="resume" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/msword,.doc,.docx" />
+        </label>
+
     </ion-content>
 </ion-view>

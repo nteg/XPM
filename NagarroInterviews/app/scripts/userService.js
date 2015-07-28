@@ -1,6 +1,6 @@
 angular.module('interview.services', [])
 
-.factory('userService', ['localStorageService', function(localStorageService){
+.factory('userService', ['localStorageService', 'dbService', function(localStorageService, dbService){
 
     'use strict';
 
@@ -22,8 +22,15 @@ angular.module('interview.services', [])
             remoteDB.logout(callback);
         },
 
+        createUser: function(data) {
+            if (data && !data._id && data.email) {
+                data._id = data.email;
+            }
+            return dbService.getLocalDbInstance().put(data);
+        },
+
         getCurrentUser: function() {
-            return localStorageService.get('userInfo');
+            return dbService.getLocalDbInstance().get('test@test.com');
         },
 
         isSignedUp: function() {
@@ -32,6 +39,14 @@ angular.module('interview.services', [])
 
         isLoggedIn: function() {
             return localStorageService.get('isLoggedIn');
+        },
+
+        saveProfileGen: function(data) {
+            console.log(data)
+            if (data && !data._id && data.email) {
+                data._id = data.email;
+            }
+            return dbService.getLocalDbInstance().post(data);
         }
 
     };

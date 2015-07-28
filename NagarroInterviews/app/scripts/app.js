@@ -4,7 +4,7 @@
 // 'interview' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'interview.controllers' is found in controllers.js
-angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interview.directives', 'LocalStorageModule', 'ionMdInput'])
+angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interview.directives', 'LocalStorageModule', 'ionMdInput', 'pouchdb'])
 
 .run(['$rootScope', '$ionicPlatform', '$location', '$state', 'userService', function($rootScope, $ionicPlatform, $location, $state, userService) {
 
@@ -32,9 +32,9 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
         }
 
         // now, redirect only not authenticated
-        var userInfo = userService.getCurrentUser();
+        var isLoggedIn = userService.isLoggedIn();
 
-        if (!userInfo || !userInfo.ok) {
+        if (!isLoggedIn) {
             e.preventDefault(); // stop current execution
             $state.go('login'); // go to login
         }
