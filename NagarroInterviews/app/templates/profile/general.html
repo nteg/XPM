@@ -3,7 +3,9 @@
         <button class="button button-icon button-clear ion-navicon" side="left" ng-click="openMenu()"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
-        <input type="submit" class="button" form="profGenForm" value="Save">
+        <button type="submit" class="button" form="profGenForm" ng-disabled="progress">
+            <ion-spinner icon="ripple" class="spinner" ng-show="progress"></ion-spinner>Save
+        </button>
     </ion-nav-buttons>
 
     <ion-content padding="true">
@@ -21,7 +23,7 @@
 
             <label class="item item-input item-floating-label" ng-class="{ 'has-error' : profGenForm.email.$invalid && profGenForm.$submitted }">
                 <span class="input-label">Email</span>
-                <input type="email" name="email" ng-model="profileData.email" placeholder="Email" required>
+                <input type="email" name="email" ng-model="profileData.email" placeholder="Email" required disabled>
             </label>
 
             <label class="item item-input item-floating-label" ng-class="{ 'has-error' : profGenForm.phone.$invalid && profGenForm.$submitted }">
