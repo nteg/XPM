@@ -215,44 +215,106 @@ angular.module('interview.controllers', ['interview.services'])
 .controller('ProfileGeneralCtrl', ['$scope', '$state', 'userService', function($scope, $state, userService) {
 
     $scope.profileData = {};
-/*    $scope.profileData = {
-        firstName: 'Arvind',
-        lastName: 'Bhardwaj',
-        email: 'bhardwajsonheight@gmail.com',
-        experience: {
-            years: 5,
-            months: 2
-        }
-    };*/
+    $scope.progress = false;
 
     userService.getCurrentUser().then(function(res) {
         $scope.profileData = res;
+        console.log(res)
+    }, function(res) {
+        $scope.profileData.email = userService.getCurrentUserId();
+        console.log(res)
     });
 
     $scope.saveProfGen = function(form) {
         var _this = this;
+        $scope.progress = !$scope.progress;
 
         // check to make sure the form is completely valid
         if (form.$valid) {
             $scope.profileData = angular.extend($scope.profileData, _this.profileData);
-            var promise = userService.saveProfileGen($scope.profileData);
+            var promise = userService.saveProfile($scope.profileData);
             promise.then(function(res) {
                 console.log(res);
                 if (!res.ok) {
                 }
+            }).finally(function() {
+                $scope.progress = !$scope.progress;
             });
         }
     };
 
 }])
 
-.controller('ProfileProffCtrl', function($scope, $ionicSideMenuDelegate) {
-    $scope.profileData = {
-        resume: {}
+.controller('ProfileProffCtrl', ['$scope', '$state', 'userService', function($scope, $state, userService) {
+    $scope.profileData = {};
+    $scope.progress = false;
+
+    userService.getCurrentUser().then(function(res) {
+        $scope.profileData = res;
+        console.log(res)
+    }, function(res) {
+        $scope.profileData.email = userService.getCurrentUserId();
+        console.log(res)
+    });
+
+    $scope.saveProfProf = function(form) {
+        var _this = this;
+        $scope.progress = !$scope.progress;
+
+        // check to make sure the form is completely valid
+        if (form.$valid) {
+            $scope.profileData = angular.extend($scope.profileData, _this.profileData);
+            var promise = userService.saveProfile($scope.profileData);
+            promise.then(function(res) {
+                console.log(res);
+                if (!res.ok) {
+                }
+            }).finally(function() {
+                $scope.progress = !$scope.progress;
+            });
+        }
     };
-})
 
-.controller('ProfileSkillsCtrl', function($scope, $ionicSideMenuDelegate) {
+}])
 
-})
+.controller('ProfileSkillsCtrl', ['$scope', '$state', 'userService', function($scope, $state, userService) {
+    $scope.profileData = {};
+    $scope.progress = false;
+    $scope.shouldShowDelete = true;
+    $scope.newSkill = "";
+
+    userService.getCurrentUser().then(function(res) {
+        $scope.profileData = res;
+        $scope.profileData.skills = ['PHP'];
+        console.log(res)
+    }, function(res) {
+        $scope.profileData.email = userService.getCurrentUserId();
+        console.log(res)
+    });
+
+    $scope.saveProf = function(form) {
+        var _this = this;
+        $scope.progress = !$scope.progress;
+
+        // check to make sure the form is completely valid
+        if (form.$valid) {
+            $scope.profileData = angular.extend($scope.profileData, _this.profileData);
+            var promise = userService.saveProfile($scope.profileData);
+            promise.then(function(res) {
+                console.log(res);
+                if (!res.ok) {
+                }
+            }).finally(function() {
+                $scope.progress = !$scope.progress;
+            });
+        }
+    };
+
+    $scope.addSkill = function() {
+        console.log($scope.newSkill);
+        // $scope.profileData.skills.push($scope.newSkill);
+    };
+
+
+}])
 ;
