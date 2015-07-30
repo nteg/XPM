@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html ng-app="nagarroApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>My Nagarro</title>
+
+    <!-- MS Open tech Shim library -->
+    <script src="scripts/winstore-jscompat.js"></script>
+
+    <!-- mynagarro.app references -->
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="bower_components/ionic/css/ionic.css" rel="stylesheet" />
+    
+</head>
+<body ng-controller="MainController">
+
+    <ion-nav-view></ion-nav-view>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <!-- External references -->
+    <script src="bower_components/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Handwritten Code -->
+    <!-- App -->
+    <script src="scripts/ngApp.js"></script>
+    <!-- Controllers -->
+    <script src="scripts/controllers/main-controller.js"></script>
+    <script src="scripts/controllers/announcement-controller.js"></script>
+    <script src="scripts/controllers/detail-controller.js"></script>
+    <script src="scripts/controllers/signin-controller.js"></script>
+    <script src="scripts/controllers/quora-controller.js"></script>
+    <!-- Services -->
+    <script src="scripts/services/factory.js"></script>
+
+    <!-- Boiler Plate -->
+    <script src="scripts/index.js"></script>
+
+</body>
+</html>

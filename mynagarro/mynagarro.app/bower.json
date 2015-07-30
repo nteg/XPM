@@ -1,0 +1,7 @@
+{
+  "name": "mynagarro.app",
+  "dependencies": {
+    "ionic": "~1.0.1",
+    "ionicons": "~2.0.1"
+  }
+}
