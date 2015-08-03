@@ -24,4 +24,5 @@
     <vs:features />
     <preference name="SplashScreen" value="screen" />
     <preference name="windows-target-version" value="8.1" />
+    <vs:plugin name="org.apache.cordova.device" version="0.3.0" />
 </widget>

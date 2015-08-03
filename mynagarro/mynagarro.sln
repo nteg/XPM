@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "mynagarro.app", "mynagarro.app\mynagarro.app.jsproj", "{97DC91D6-334C-4FE4-B9F7-166E8723881C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05195D6A-5EE3-4ACC-9D5A-758B415FD11C} = {05195D6A-5EE3-4ACC-9D5A-758B415FD11C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mynagarro.webapi", "mynagarro.webapi\mynagarro.webapi.csproj", "{05195D6A-5EE3-4ACC-9D5A-758B415FD11C}"
 EndProject

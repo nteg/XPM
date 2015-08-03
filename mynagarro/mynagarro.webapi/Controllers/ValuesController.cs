@@ -15,7 +15,7 @@ namespace mynagarro.webapi.Controllers
     public class ValuesController : ApiController
     {
         [HttpGet]
-        public async Task<HttpResponseMessage> Get()
+        public async Task<HttpResponseMessage> Get(int? id)
         {
             AnnouncementRepository nr = new AnnouncementRepository();
 
@@ -23,14 +23,14 @@ namespace mynagarro.webapi.Controllers
 
             List<Announcement> filterData = null;
 
-            //if (id != null)
-            //{
-            //    filterData = data.Where(z => z.ID > id).ToList();
-            //}
-            //else
-            //{
-               filterData = data;
-            //}
+            if (id != null)
+            {
+                filterData = data.Where(z => z.ID > id).ToList();
+            }
+            else
+            {
+                filterData = data;
+            }
 
 
             var jsonFormatter = GlobalConfiguration.Configuration.Formatters.JsonFormatter;

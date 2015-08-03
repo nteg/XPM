@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    angular.module('nagarroApp', ['ionic'])
+    angular.module('nagarroApp', ['ionic', 'ngStorage'])
            .config(function ($stateProvider, $urlRouterProvider) {
 
                $stateProvider
@@ -26,7 +26,8 @@
                     url: "/settings",
                     views: {
                         'menuContent': {
-                            templateUrl: "templates/settings.html"
+                            templateUrl: "templates/settings.html",
+                            controller: "SettingsController"
                         }
                     }
                 })

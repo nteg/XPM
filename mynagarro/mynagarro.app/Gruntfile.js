@@ -15,6 +15,18 @@
                     cwd: 'bower_components/ionicons/',
                     src: ['css', 'fonts'],
                     dest: 'www/bower_components/ionicons'
+                },
+                {
+                    expand: true,
+                    cwd: 'bower_components/ngCordova/',
+                    src: ['dist/**'],
+                    dest: 'www/bower_components/ngCordova'
+                },
+                {
+                    expand: true,
+                    cwd: 'node_modules/ngstorage/',
+                    src: ['**'],
+                    dest: 'www/node_modules/ngstorage'
                 }]
             }
         }
