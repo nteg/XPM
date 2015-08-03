@@ -2,13 +2,28 @@
     <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
     </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button type="submit" class="button" form="profProfForm" ng-disabled="progress">
+            <ion-spinner icon="ripple" class="spinner" ng-show="progress"></ion-spinner>Save
+        </button>
+    </ion-nav-buttons>
 
     <ion-content padding="true">
-        <label class="item item-input item-floating-label">
-            <span class="input-label">Experience</span>
-            <div class="row">
-                <div class="col"><input type="text" ng-model="profileData.experience.years" placeholder="Years"></div>
-            </div>
-        </label>
+
+        <ion-list show-delete="shouldShowDelete">
+            <ion-item ng-repeat="skill in profileData.skills" class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" value="{{skill}}">
+                </label>
+            </ion-item>
+        </ion-list>
+
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" ng-model="newSkill" value="" placeholder="Add new">
+            </label>
+            <button class="button" ng-click="addSkill()">Add</button>
+        </div>
+
     </ion-content>
 </ion-view>

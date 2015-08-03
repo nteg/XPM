@@ -1,6 +1,6 @@
 angular.module('interview.services', [])
 
-.factory('userService', ['localStorageService', 'dbService', function(localStorageService, dbService){
+.factory('userService', ['$q', 'localStorageService', 'dbService', function($q, localStorageService, dbService){
 
     'use strict';
 
@@ -29,8 +29,24 @@ angular.module('interview.services', [])
             return dbService.getLocalDbInstance().put(data);
         },
 
+        getCurrentUserId: function() {
+            var userData = localStorageService.get('userInfo');
+            return userData.name;
+        },
+
         getCurrentUser: function() {
-            return dbService.getLocalDbInstance().get('test@test.com');
+            var dfd = $q.defer();
+            var username = this.getCurrentUserId();
+            if (!username) {
+                dfd.reject({name:'not_found', message: 'User not found.'});
+            } else {
+                dbService.getLocalDbInstance().get(username).then(function(res) {
+                    dfd.resolve(res);
+                }, function(res) {
+                    dfd.reject(res);
+                });
+            }
+            return dfd.promise;
         },
 
         isSignedUp: function() {
@@ -41,7 +57,7 @@ angular.module('interview.services', [])
             return localStorageService.get('isLoggedIn');
         },
 
-        saveProfileGen: function(data) {
+        saveProfile: function(data) {
             console.log(data)
             if (data && !data._id && data.email) {
                 data._id = data.email;
