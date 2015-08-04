@@ -1,26 +1,35 @@
 <ion-view title="Skills">
     <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+        <!--
+            We should set the shouldShowDelete on rootScope otherwise
+            it will not be available in the content below
+        -->
+        <button class="button button-icon icon ion-ios-minus-outline" ng-click="$root.shouldShowDelete = !$root.shouldShowDelete"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
-        <button type="submit" class="button" form="profProfForm" ng-disabled="progress">
+        <button type="submit" class="button" form="profSkillForm" ng-disabled="progress">
             <ion-spinner icon="ripple" class="spinner" ng-show="progress"></ion-spinner>Save
         </button>
     </ion-nav-buttons>
 
-    <ion-content padding="true">
+    <ion-content padding="theme.showPadding">
 
-        <ion-list show-delete="shouldShowDelete">
-            <ion-item ng-repeat="skill in profileData.skills" class="item item-input-inset">
-                <label class="item-input-wrapper">
-                    <input type="text" value="{{skill}}">
-                </label>
-            </ion-item>
-        </ion-list>
+        <form name="profSkillForm" id="profSkillForm" ng-submit="saveProf(profSkillForm)" novalidate>  <!-- novalidate prevents HTML5 validation since we will be validating ourselves  -->
+            <ion-list show-delete="$root.shouldShowDelete" can-swipe="listCanSwipe">
+                <ion-item ng-repeat="skill in profileData.skills track by $index" class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <input name="skill-{{$index}}" type="text" value="{{skill}}">
+                    </label>
+
+                    <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(skill)"></ion-delete-button>
+                </ion-item>
+            </ion-list>
+        </form>
 
         <div class="item item-input-inset">
             <label class="item-input-wrapper">
-                <input type="text" ng-model="newSkill" value="" placeholder="Add new">
+                <input type="text" ng-model="profileData.newSkill" placeholder="Add new">
             </label>
             <button class="button" ng-click="addSkill()">Add</button>
         </div>

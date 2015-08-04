@@ -1,26 +1,28 @@
-<ion-view view-title="Signup">
+<ion-view view-title="Change Password">
     <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
     </ion-nav-buttons>
 
-    <ion-content padding="true">
+    <ion-content padding="theme.showPadding">
         <form name="chpwdForm" ng-submit="chPwd(chpwdForm)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
             <div class="list">
-                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : chpwdForm.oldpassword.$invalid && !chpwdForm.oldpassword.$pristine && submitted }">
-                    <span class="input-label">Old Password</span>
-                    <input type="oldpassword" name="oldpassword" placeholder="Password" ng-model="oldpassword" ng-minlength="3" ng-maxlength="15" ng-required>
-                </label>
-
-                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : chpwdForm.newpassword.$invalid && !chpwdForm.newpassword.$pristine && submitted }">
+                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : chpwdForm.newpassword.$invalid && !chpwdForm.newpassword.$pristine && chpwdForm.$submitted }">
                     <span class="input-label">New Password</span>
-                    <input type="newpassword" name="newpassword" placeholder="Password" ng-model="newpassword" ng-minlength="3" ng-maxlength="15" ng-required>
+                    <input type="password" name="newpassword" placeholder="New password" ng-model="newpassword" ng-minlength="3" ng-maxlength="15" required>
                 </label>
-                <p ng-show="chpwdForm.newpassword.$error.minlength && submitted" class="help-block">Password is too short.</p>
-                <p ng-show="chpwdForm.newpassword.$error.maxlength && submitted" class="help-block">Password is too long.</p>
+                <p ng-show="chpwdForm.newpassword.$error.minlength && chpwdForm.$submitted" class="help-block">Password is too short.</p>
+                <p ng-show="chpwdForm.newpassword.$error.maxlength && chpwdForm.$submitted" class="help-block">Password is too long.</p>
+
+                <label class="item item-input item-floating-label" ng-class="{ 'has-error' : chpwdForm.conPassword.$invalid && !chpwdForm.conPassword.$pristine && chpwdForm.$submitted }">
+                    <span class="input-label">Confirm Password</span>
+                    <input type="password" name="conPassword" placeholder="Confirm Password" ng-model="conPassword" compare-to="chpwdForm.newpassword" required>
+                </label>
+                <p ng-show="chpwdForm.conPassword.$error.required && chpwdForm.conPassword.$submitted" class="help-block">Confirm password is required.</p>
+                <p ng-show="chpwdForm.conPassword.$error.compareTo && chpwdForm.$submitted" class="help-block">Passwords do not match.</p>
             </div>
 
             <div class="padding">
-                <button class="button button-block button-positive" type="submit">Change</button>
+                <button class="button button-block button-{{theme.name}}" type="submit">Change</button>
             </div>
 
         </form>

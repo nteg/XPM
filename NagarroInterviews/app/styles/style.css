@@ -22,6 +22,14 @@ label.item.valid-lr {
   color: red;
 }
 
+.help-block {
+	margin: 5px;
+}
+
 .spinner {
 	stroke: #fff;
+}
+
+.white {
+	color: #fff;
 }
