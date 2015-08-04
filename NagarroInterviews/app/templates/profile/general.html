@@ -3,12 +3,12 @@
         <button class="button button-icon button-clear ion-navicon" side="left" ng-click="openMenu()"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
-        <button type="submit" class="button" form="profGenForm" ng-disabled="progress">
+        <button type="submit" class="button button-{{theme.header.button.name}}" form="profGenForm" ng-disabled="progress">
             <ion-spinner icon="ripple" class="spinner" ng-show="progress"></ion-spinner>Save
         </button>
     </ion-nav-buttons>
 
-    <ion-content padding="true">
+    <ion-content padding="theme.showPadding">
 
         <form name="profGenForm" id="profGenForm" ng-submit="saveProfGen(profGenForm)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
             <label class="item item-input item-floating-label" ng-class="{ 'has-error' : profGenForm.firstName.$invalid && profGenForm.$submitted }">

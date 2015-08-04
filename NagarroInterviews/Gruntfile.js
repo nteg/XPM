@@ -49,7 +49,7 @@ module.exports = function (grunt) {
                 name: 'nagInterviews'
               },
               remote: {
-                name :'nagInterviews',
+                name :'naginterviews',
                 url:'http://localhost:5984/'
               }
             }

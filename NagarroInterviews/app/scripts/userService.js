@@ -5,7 +5,8 @@ angular.module('interview.services', [])
     'use strict';
 
     var localDb = window.localDB,
-        remoteDB = window.remoteDB;
+        remoteDB = window.remoteDB,
+        TYPE_PROFILE = 'profile';
 
     return {
 
@@ -34,6 +35,10 @@ angular.module('interview.services', [])
             return userData.name;
         },
 
+        changePassword: function(username, pwd, callback) {
+            remoteDB.changePassword(username, pwd, callback);
+        },
+
         getCurrentUser: function() {
             var dfd = $q.defer();
             var username = this.getCurrentUserId();
@@ -58,10 +63,10 @@ angular.module('interview.services', [])
         },
 
         saveProfile: function(data) {
-            console.log(data)
             if (data && !data._id && data.email) {
                 data._id = data.email;
             }
+            data.type = TYPE_PROFILE;
             return dbService.getLocalDbInstance().post(data);
         }
 

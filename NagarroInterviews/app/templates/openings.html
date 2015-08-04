@@ -1,0 +1,19 @@
+<ion-view view-title="Openings">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+    </ion-nav-buttons>
+
+    <ion-content padding="theme.showPadding">
+
+        <ion-list can-swipe="listCanSwipe">
+            <ion-item ng-repeat="opening in data.openings track by $index" class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    {{opening.value}}
+                </label>
+
+                <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(skill)"></ion-delete-button>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

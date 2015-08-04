@@ -3,7 +3,7 @@
         <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
     </ion-nav-buttons>
 
-    <ion-content padding="true">
+    <ion-content padding="theme.showPadding">
         <form name="signupForm" ng-submit="doSignup(signupForm)" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
             <div class="list">
                 <label class="item item-input item-floating-label" ng-class="{ 'has-error' : signupForm.email.$invalid && !signupForm.email.$pristine && submitted }">
@@ -27,7 +27,7 @@
             </div>
 
             <div class="padding">
-                <button class="button button-block button-positive" type="submit">Sign Up</button>
+                <button class="button button-block button-{{theme.name}}" type="submit">Sign Up</button>
             </div>
 
         </form>
