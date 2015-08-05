@@ -1,0 +1,56 @@
+<ion-view view-title="Openings">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+    </ion-nav-buttons>
+
+    <ion-content padding="theme.showPadding">
+        <div class="list card" ng-if="!equals({}, opening)">
+
+            <div ng-if="opening.status == 'open'">
+
+                <div class="item">
+                    <h2>{{opening.title}}</h2>
+                    <p>{{opening.date_posted}}</p>
+                </div>
+
+                <div class="item item-body">
+                    <p>{{opening.description}}</p>
+                    <p>Location: {{opening.location}}</p>
+                    <p>Requires Exp.: {{opening.experience}}</p>
+                    <!-- <p>
+                        <a href="#" class="subdued">1 Like</a>
+                        <a href="#" class="subdued">5 Comments</a>
+                    </p> -->
+                </div>
+
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <!-- <a class="tab-item" href="#">
+                        <i class="icon ion-thumbsup"></i>
+                        Like
+                    </a>
+                    <a class="tab-item" href="#">
+                        <i class="icon ion-chatbox"></i>
+                        Comment
+                    </a> -->
+                    <button class="button button-{{theme.name}}">
+                        <i class="icon ion-share"></i>
+                        Apply
+                    </button>
+                </div>
+
+            </div>
+
+            <div ng-if="opening.status != 'open'">
+                <div class="item">
+                    <h2>This job is not available anymore.</h2>
+                </div>
+            </div>
+
+            <div class="list card" ng-if="equals({}, opening)">
+                Job not found!
+            </div>
+
+        </div>
+
+    </ion-content>
+</ion-view>

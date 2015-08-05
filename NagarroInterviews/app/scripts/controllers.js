@@ -407,11 +407,29 @@ angular.module('interview.controllers', ['interview.services'])
     $scope.data.openings = {};
 
     openingsService.getAllOpenings().then(function(res) {
-        console.log(res)
         $scope.data.openings = angular.extend($scope.data.openings, res.rows);
     }, function() {
 
     });
+
+}])
+
+.controller('OpeningDetailCtrl', ['$scope', '$state', 'openingsService', function($scope, $state, openingsService) {
+    $scope.opening = {};
+
+    var openingId = $state.params.openingId;
+
+    $scope.getOpeningDetails = function() {
+        if (openingId) {
+            openingsService.getOpeningById(openingId).then(function(res) {
+                $scope.opening = angular.extend($scope.opening, res);
+            }, function() {
+
+            });
+        }
+    };
+
+    $scope.getOpeningDetails();
 
 }])
 ;

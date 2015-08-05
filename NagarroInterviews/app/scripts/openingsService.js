@@ -17,6 +17,20 @@ angular.module('interview.services')
                 dfd.reject(res);
             });
             return dfd.promise;
+        },
+
+        getOpeningById: function(id) {
+            var dfd = $q.defer();
+            dbService.getLocalDbInstance().get(id)
+                .then(function(res) {
+                    dfd.resolve(res);
+                })
+                .catch(function(err) {
+                    dfd.reject(res);
+                })
+                .finally(function() {
+                });
+            return dfd.promise;
         }
 
     };

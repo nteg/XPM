@@ -73,6 +73,11 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
       controller: 'OpeningsCtrl',
       templateUrl: 'templates/openings.html'
     })
+    .state('openings.detail', {
+      url: '/opening-detail/:openingId',
+      controller: 'OpeningDetailCtrl',
+      templateUrl: 'templates/openings/opening-details.html'
+    })
     .state('profile', {
       url: '/profile',
       controller: 'ProfileCtrl',
