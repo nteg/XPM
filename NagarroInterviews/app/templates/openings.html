@@ -6,14 +6,12 @@
     <ion-content padding="theme.showPadding">
         <div class="list">
 
-            <a ui-sref="openings.detail({ openingId: opening.value._id })" ng-repeat="opening in data.openings track by $index" class="item item-icon-right">
+            <a ui-sref="app.openings-detail({ openingId: opening.value._id })" ng-repeat="opening in data.openings track by $index" class="item item-icon-right">
                 {{opening.value.title}}
                 <i class="icon ion-arrow-right-c"></i>
             </a>
 
         </div>
     </ion-content>
-</ion-view>
 
-<!-- View for opening-details -->
-<div ui-view></div>
+</ion-view>

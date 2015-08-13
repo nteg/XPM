@@ -7,8 +7,10 @@ angular.module('interview.controllers', ['interview.services'])
     $scope.isLoggedIn = userService.isLoggedIn();
     $scope.isSignedUp = userService.isSignedUp();
 
+    var currentPlatform = ionic.Platform.platform();
     $scope.system = {};
-    $scope.system.platform = 'ios';
+    $scope.system.platform = currentPlatform;
+    console.log(currentPlatform)
 
     $scope.theme = {
         name: 'positive',

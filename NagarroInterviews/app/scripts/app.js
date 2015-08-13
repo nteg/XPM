@@ -41,49 +41,81 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
     });
 }])
 
-.config(['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', 'ENV', function($stateProvider, $urlRouterProvider, localStorageServiceProvider, ENV) {
+.config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider', 'localStorageServiceProvider', 'ENV', function($stateProvider, $urlRouterProvider, $ionicConfigProvider, localStorageServiceProvider, ENV) {
 
   'use strict';
 
   window.remoteDB = new PouchDB(ENV.DB.remote.url + ENV.DB.remote.name);
   window.localDB = new PouchDB(ENV.DB.local.name);
-  window.localDB.sync(window.remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
+  // window.localDB.sync(window.remoteDB, {live: true, retry: true}).on('error', console.log.bind(console));
 
   localStorageServiceProvider
     .setPrefix('ngInt');
 
+
+    $ionicConfigProvider.backButton.text(' ').icon('ion-chevron-left').previousTitleText(false);
+
   $stateProvider
-    .state('login', {
+    .state('app', {
+      url: "/app",
+      abstract: true,
+      templateUrl: "templates/menu.html"
+    })
+    .state('app.login', {
       url: '/login',
-      controller: 'LoginCtrl',
-      templateUrl: 'templates/login.html'
+      views: {
+        'menuContent': {
+          controller: 'LoginCtrl',
+          templateUrl: 'templates/login.html'
+        }
+      }
     })
-    .state('signup', {
+    .state('app.signup', {
       url: '/signup',
-      controller: 'SignupCtrl',
-      templateUrl: 'templates/signup.html'
+      views: {
+        'menuContent': {
+          controller: 'SignupCtrl',
+          templateUrl: 'templates/signup.html'
+        }
+      }
     })
-    .state('chpwd', {
+    .state('app.chpwd', {
       url: '/chpwd',
-      controller: 'ChpwdCtrl',
-      templateUrl: 'templates/chpwd.html'
+      views: {
+        'menuContent': {
+          controller: 'ChpwdCtrl',
+          templateUrl: 'templates/chpwd.html'
+        }
+      }
     })
-    .state('openings', {
+    .state('app.openings', {
       url: '/openings',
-      controller: 'OpeningsCtrl',
-      templateUrl: 'templates/openings.html'
+      views: {
+        'menuContent': {
+          controller: 'OpeningsCtrl',
+          templateUrl: 'templates/openings.html'
+        }
+      }
     })
-    .state('openings.detail', {
-      url: '/opening-detail/:openingId',
-      controller: 'OpeningDetailCtrl',
-      templateUrl: 'templates/openings/opening-details.html'
+    .state('app.openings-detail', {
+      url: '/openings/:openingId',
+      views: {
+        'menuContent': {
+          controller: 'OpeningDetailCtrl',
+          templateUrl: 'templates/openings/opening-details.html'
+        }
+      }
     })
-    .state('profile', {
+    .state('app.profile', {
       url: '/profile',
-      controller: 'ProfileCtrl',
-      templateUrl: 'templates/profile.html'
+      views: {
+        'menuContent': {
+          controller: 'ProfileCtrl',
+          templateUrl: 'templates/profile.html'
+        }
+      }
     })
-    .state('profile.general', {
+    .state('app.profile.general', {
       url: '/general',
       views: {
         'general-tab': {
@@ -92,7 +124,7 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
         }
       }
     })
-    .state('profile.professional', {
+    .state('app.profile.professional', {
       url: '/professional',
       views: {
         'professional-tab': {
@@ -101,7 +133,7 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
         }
       }
     })
-    .state('profile.skills', {
+    .state('app.profile.skills', {
       url: '/skills',
       views: {
         'skills-tab': {
@@ -111,6 +143,6 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
       }
     });
 
-  $urlRouterProvider.otherwise('/profile/general');
+  $urlRouterProvider.otherwise('/app/profile/general');
 }])
 ;
