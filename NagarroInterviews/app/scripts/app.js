@@ -24,9 +24,9 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
   });
 
     $rootScope.$on( '$stateChangeStart', function(e, toState , toParams, fromState, fromParams) {
-        var isLogin = toState.name === 'login',
-            isSignUp = toState.name === 'signup',
-            isAbout = toState.name === 'about';
+        var isLogin = toState.name === 'app.login',
+            isSignUp = toState.name === 'app.signup',
+            isAbout = toState.name === 'app.about';
         if (isLogin || isSignUp || isAbout) {
           return; // no need to redirect
         }
@@ -36,7 +36,7 @@ angular.module('interview', ['ionic', 'config', 'interview.controllers', 'interv
 
         if (!isLoggedIn) {
             e.preventDefault(); // stop current execution
-            $state.go('login'); // go to login
+            $state.go('app.login'); // go to login
         }
     });
 }])
