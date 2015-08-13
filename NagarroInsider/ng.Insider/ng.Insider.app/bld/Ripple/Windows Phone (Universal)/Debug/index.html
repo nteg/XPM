@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html ng-app="ionicApp">
+<head>
+    <meta charset="utf-8" />
+    <title>ng.Insider.app</title>
+
+    <!-- ng.Insider.app references -->
+    <link href="css/index.css" rel="stylesheet" />
+
+    <script src="scripts/winstore-jscompat.js"></script>
+    <link href="bower_components/ionic/css/ionic.css" rel="stylesheet" />
+
+    <script src="bower_components/ionic/js/ionic.bundle.js"></script>
+
+</head>
+<body ng-controller="MainController">
+   
+    <ion-nav-view></ion-nav-view>
+
+    <!-- Page Code Start-->
+
+    <script type="text/ng-template" id="templates/todo.html">
+        <ion-view title="Edit Todo">
+            <ion-content>
+                <div class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Name</span>
+                        <input type="text" ng-model="todo.name">
+                    </label>
+                </div>
+            </ion-content>
+        </ion-view>
+    </script>
+
+    <!-- Page Code End -->
+    <!-- Homepage -->
+    <!-- Homepage -->
+
+
+<!-- Winjs -->
+    <script src="scripts/winjs/base.js"></script>
+    <script src="scripts/winjs/ui.js"></script>
+
+
+    <script src="scripts/core/ngCode.js"></script>
+
+    <!-- Routes -->
+    <script src="scripts/core/ngRoutes.js"></script>
+
+    <!-- Services -->
+    <script src="scripts/core/services.js"></script>
+    <script src="scripts/core/notificationService.js"></script>
+    
+    <!-- Controllers -->
+    <script src="scripts/controllers/HomeController.js"></script>
+    <script src="scripts/controllers/NotificationController.js"></script>
+    <script src="scripts/controllers/DetailsController.js"></script>
+    <script src="http://code.angularjs.org/1.0.4/angular-sanitize.min.js"></script>
+
+    <!-- push notification code  -->
+    <script src="scripts/support/notification.js"></script>
+    <script src="scripts/support/pushNotification.js"></script>
+
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>

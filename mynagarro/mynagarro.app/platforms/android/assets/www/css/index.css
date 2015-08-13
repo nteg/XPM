@@ -1,0 +1,20 @@
+﻿.square {
+    position: absolute;
+    /*left: 50%;*/
+    margin-top: 80px;
+    margin-bottom: 40px;
+    /*margin-left: -150px;*/
+    /*width: 100px;*/
+    height: 150px;
+    border: 1px solid #999;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 20px;
+}
+
+.enlarge {
+    font-size: 4rem;
+}
+
+.unread a.item-content {
+    font-weight: bold;
+}

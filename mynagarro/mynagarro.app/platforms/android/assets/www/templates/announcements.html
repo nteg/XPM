@@ -1,0 +1,17 @@
+﻿<ion-view view-title="Announcements">
+    
+    <ion-content class="padding">
+
+        <ion-refresher pulling-text="Pull to refresh..."
+                       on-refresh="doRefresh()">
+        </ion-refresher>
+        <ion-list>
+            <ion-item ng-repeat="item in items | orderBy:'id':true" class="ng-class:item.cssClass" href="#/main/detail" ui-sref="mainmenu.detail({id: item.id})">
+                <i class="icon ion-speakerphone"></i>
+                {{item.title}}
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>

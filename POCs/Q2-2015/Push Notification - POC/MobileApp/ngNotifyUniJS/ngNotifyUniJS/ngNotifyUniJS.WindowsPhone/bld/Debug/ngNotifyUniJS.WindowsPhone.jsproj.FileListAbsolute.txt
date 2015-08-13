@@ -1,0 +1,15 @@
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bin\Debug\ReverseMap\resources.pri
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bin\Debug\AppxManifest.xml
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bin\Debug\ngNotifyUniJS.WindowsPhone.build.appxrecipe
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\priconfig.xml
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\priconfig.xml.intermediate
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\layout.resfiles
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\layout.resfiles.intermediate
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\resources.resfiles
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\resources.resfiles.intermediate
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\pri.resfiles
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\pri.resfiles.intermediate
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\qualifiers.txt
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\qualifiers.txt.intermediate
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+c:\users\ranvirsingh\documents\visual studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.WindowsPhone\bld\Debug\ProjectArchitectures.txt
