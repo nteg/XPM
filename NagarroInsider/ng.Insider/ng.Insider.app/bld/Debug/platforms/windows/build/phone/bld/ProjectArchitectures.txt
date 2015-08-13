@@ -1,0 +1,1 @@
+E:\p\ng.Insider\ng.Insider.app\bld\Debug\platforms\windows\CordovaApp.Phone.jsproj;neutral

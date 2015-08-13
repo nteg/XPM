@@ -1,0 +1,25 @@
+﻿<ion-view>
+    <ion-header-bar class="bar-positive">
+        <a class="button button-icon" href="#/event/notification" menu-close>
+            <i class="icon ion-android-arrow-back"></i>
+        </a>
+        <h1 class="title">{{pagetitle}}</h1>
+        <!-- New Task button-->
+        <a class="button button-icon" href="#/event/home" menu-close>
+            <i class="icon ion-ios-home"></i>
+        </a>
+    </ion-header-bar>
+
+    <ion-content>
+        <div class="list card">
+            <div class="item item-head">
+                <h1>{{details.title}}</h1>
+                <h2>{{details.location}}</h2>
+                <h3>{{details.date | date:'medium'}}</h3>
+            </div>
+            <div class="item item-body">
+                <span ng-bind-html="details.description"></span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

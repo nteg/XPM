@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="io.cordova.I101" version="1.0" primary="true">
+		<Qualifiers>
+			<Scale>240</Scale>
+		</Qualifiers>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="config.xml" uri="ms-resource://io.cordova.I101/Files/config.xml">
+				<Candidate type="Path">
+					<Value>config.xml</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="images">
+				<NamedResource name="SplashScreen.png" uri="ms-resource://io.cordova.I101/Files/images/SplashScreen.png">
+					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
+						<Value>images\SplashScreen.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SplashScreenPhone.png" uri="ms-resource://io.cordova.I101/Files/images/SplashScreenPhone.png">
+					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
+						<Value>images\SplashScreenPhone.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square150x150Logo.png" uri="ms-resource://io.cordova.I101/Files/images/Square150x150Logo.png">
+					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
+						<Value>images\Square150x150Logo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square30x30Logo.png" uri="ms-resource://io.cordova.I101/Files/images/Square30x30Logo.png"/>
+				<NamedResource name="Square310x310Logo.png" uri="ms-resource://io.cordova.I101/Files/images/Square310x310Logo.png"/>
+				<NamedResource name="Square44x44Logo.png" uri="ms-resource://io.cordova.I101/Files/images/Square44x44Logo.png">
+					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
+						<Value>images\Square44x44Logo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square70x70Logo.png" uri="ms-resource://io.cordova.I101/Files/images/Square70x70Logo.png"/>
+				<NamedResource name="Square71x71Logo.png" uri="ms-resource://io.cordova.I101/Files/images/Square71x71Logo.png">
+					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
+						<Value>images\Square71x71Logo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StoreLogo.png" uri="ms-resource://io.cordova.I101/Files/images/StoreLogo.png">
+					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
+						<Value>images\StoreLogo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Wide310x150Logo.png" uri="ms-resource://io.cordova.I101/Files/images/Wide310x150Logo.png">
+					<Candidate qualifiers="Scale-240" isDefault="true" type="Path">
+						<Value>images\Wide310x150Logo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+			<ResourceMapSubtree name="www">
+				<NamedResource name="bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower.json">
+					<Candidate type="Path">
+						<Value>www\bower.json</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="cordova.js" uri="ms-resource://io.cordova.I101/Files/www/cordova.js">
+					<Candidate type="Path">
+						<Value>www\cordova.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="cordova_plugins.js" uri="ms-resource://io.cordova.I101/Files/www/cordova_plugins.js">
+					<Candidate type="Path">
+						<Value>www\cordova_plugins.js</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="index.html" uri="ms-resource://io.cordova.I101/Files/www/index.html">
+					<Candidate type="Path">
+						<Value>www\index.html</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="new-task2.html" uri="ms-resource://io.cordova.I101/Files/www/new-task2.html">
+					<Candidate type="Path">
+						<Value>www\new-task2.html</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Project_Readme.html" uri="ms-resource://io.cordova.I101/Files/www/Project_Readme.html">
+					<Candidate type="Path">
+						<Value>www\Project_Readme.html</Value>
+					</Candidate>
+				</NamedResource>
+				<ResourceMapSubtree name="bower_components">
+					<ResourceMapSubtree name="angular">
+						<NamedResource name=".bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular/.bower.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular\.bower.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular-csp.css" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular/angular-csp.css">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular\angular-csp.css</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular/angular.js">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular\angular.js</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular.min.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular/angular.min.js">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular\angular.min.js</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular.min.js.gzip" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular/angular.min.js.gzip">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular\angular.min.js.gzip</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular.min.js.map" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular/angular.min.js.map">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular\angular.min.js.map</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular/bower.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular\bower.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="package.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular/package.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular\package.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="README.md" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular/README.md">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular\README.md</Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="angular-animate">
+						<NamedResource name=".bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-animate/.bower.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-animate\.bower.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular-animate.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-animate/angular-animate.js">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-animate\angular-animate.js</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular-animate.min.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-animate/angular-animate.min.js">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-animate\angular-animate.min.js</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular-animate.min.js.map" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-animate/angular-animate.min.js.map">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-animate\angular-animate.min.js.map</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-animate/bower.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-animate\bower.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="package.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-animate/package.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-animate\package.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="README.md" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-animate/README.md">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-animate\README.md</Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="angular-sanitize">
+						<NamedResource name=".bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-sanitize/.bower.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-sanitize\.bower.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular-sanitize.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-sanitize/angular-sanitize.js">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-sanitize\angular-sanitize.js</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular-sanitize.min.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-sanitize/angular-sanitize.min.js">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-sanitize\angular-sanitize.min.js</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="angular-sanitize.min.js.map" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-sanitize/angular-sanitize.min.js.map">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-sanitize\angular-sanitize.min.js.map</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-sanitize/bower.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-sanitize\bower.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="package.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-sanitize/package.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-sanitize\package.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="README.md" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-sanitize/README.md">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-sanitize\README.md</Value>
+							</Candidate>
+						</NamedResource>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="angular-ui-router">
+						<NamedResource name=".bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/.bower.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-ui-router\.bower.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/bower.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-ui-router\bower.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="CHANGELOG.md" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/CHANGELOG.md">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-ui-router\CHANGELOG.md</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="CONTRIBUTING.md" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/CONTRIBUTING.md">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-ui-router\CONTRIBUTING.md</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="LICENSE" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/LICENSE">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-ui-router\LICENSE</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="README.md" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/README.md">
+							<Candidate type="Path">
+								<Value>www\bower_components\angular-ui-router\README.md</Value>
+							</Candidate>
+						</NamedResource>
+						<ResourceMapSubtree name="api">
+							<NamedResource name="angular-ui-router.d.ts" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/api/angular-ui-router.d.ts">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\api\angular-ui-router.d.ts</Value>
+								</Candidate>
+							</NamedResource>
+						</ResourceMapSubtree>
+						<ResourceMapSubtree name="release">
+							<NamedResource name="angular-ui-router.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/release/angular-ui-router.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\release\angular-ui-router.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="angular-ui-router.min.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/release/angular-ui-router.min.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\release\angular-ui-router.min.js</Value>
+								</Candidate>
+							</NamedResource>
+						</ResourceMapSubtree>
+						<ResourceMapSubtree name="src">
+							<NamedResource name="common.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/common.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\common.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="resolve.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/resolve.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\resolve.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="state.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/state.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\state.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="stateDirectives.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/stateDirectives.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\stateDirectives.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="stateFilters.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/stateFilters.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\stateFilters.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="templateFactory.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/templateFactory.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\templateFactory.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="urlMatcherFactory.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/urlMatcherFactory.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\urlMatcherFactory.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="urlRouter.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/urlRouter.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\urlRouter.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="view.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/view.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\view.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="viewDirective.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/viewDirective.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\viewDirective.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="viewScroll.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/angular-ui-router/src/viewScroll.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\angular-ui-router\src\viewScroll.js</Value>
+								</Candidate>
+							</NamedResource>
+						</ResourceMapSubtree>
+					</ResourceMapSubtree>
+					<ResourceMapSubtree name="ionic">
+						<NamedResource name=".bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/.bower.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\ionic\.bower.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="bower.json" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/bower.json">
+							<Candidate type="Path">
+								<Value>www\bower_components\ionic\bower.json</Value>
+							</Candidate>
+						</NamedResource>
+						<NamedResource name="README.md" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/README.md">
+							<Candidate type="Path">
+								<Value>www\bower_components\ionic\README.md</Value>
+							</Candidate>
+						</NamedResource>
+						<ResourceMapSubtree name="css">
+							<NamedResource name="ionic.css" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/css/ionic.css">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\css\ionic.css</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="ionic.min.css" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/css/ionic.min.css">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\css\ionic.min.css</Value>
+								</Candidate>
+							</NamedResource>
+						</ResourceMapSubtree>
+						<ResourceMapSubtree name="fonts">
+							<NamedResource name="ionicons.eot" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/fonts/ionicons.eot">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\fonts\ionicons.eot</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="ionicons.svg" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/fonts/ionicons.svg">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\fonts\ionicons.svg</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="ionicons.ttf" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/fonts/ionicons.ttf">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\fonts\ionicons.ttf</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="ionicons.woff" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/fonts/ionicons.woff">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\fonts\ionicons.woff</Value>
+								</Candidate>
+							</NamedResource>
+						</ResourceMapSubtree>
+						<ResourceMapSubtree name="js">
+							<NamedResource name="ionic-angular.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/js/ionic-angular.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\js\ionic-angular.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="ionic-angular.min.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/js/ionic-angular.min.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\js\ionic-angular.min.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="ionic.bundle.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/js/ionic.bundle.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\js\ionic.bundle.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="ionic.bundle.min.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/js/ionic.bundle.min.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\js\ionic.bundle.min.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="ionic.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/js/ionic.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\js\ionic.js</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="ionic.min.js" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/js/ionic.min.js">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\js\ionic.min.js</Value>
+								</Candidate>
+							</NamedResource>
+						</ResourceMapSubtree>
+						<ResourceMapSubtree name="scss">
+							<NamedResource name="ionic.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/ionic.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\ionic.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_action-sheet.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_action-sheet.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_action-sheet.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_animations.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_animations.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_animations.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_backdrop.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_backdrop.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_backdrop.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_badge.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_badge.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_badge.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_bar.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_bar.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_bar.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_button-bar.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_button-bar.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_button-bar.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_button.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_button.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_button.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_checkbox.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_checkbox.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_checkbox.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_form.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_form.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_form.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_grid.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_grid.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_grid.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_items.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_items.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_items.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_list.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_list.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_list.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_loaders.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_loaders.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_loaders.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_loading.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_loading.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_loading.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_menu.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_menu.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_menu.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_mixins.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_mixins.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_mixins.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_modal.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_modal.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_modal.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_platform.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_platform.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_platform.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_popover.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_popover.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_popover.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_popup.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_popup.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_popup.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_progress.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_progress.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_progress.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_radio.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_radio.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_radio.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_range.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_range.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_range.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_refresher.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_refresher.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_refresher.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_reset.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_reset.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_reset.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_scaffolding.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_scaffolding.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_scaffolding.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_select.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_select.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_select.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_slide-box.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_slide-box.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_slide-box.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_spinner.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_spinner.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_spinner.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_split-pane.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_split-pane.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_split-pane.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_tabs.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_tabs.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_tabs.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_toggle.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_toggle.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_toggle.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_transitions.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_transitions.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_transitions.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_type.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_type.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_type.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_util.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_util.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_util.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<NamedResource name="_variables.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/_variables.scss">
+								<Candidate type="Path">
+									<Value>www\bower_components\ionic\scss\_variables.scss</Value>
+								</Candidate>
+							</NamedResource>
+							<ResourceMapSubtree name="ionicons">
+								<NamedResource name="ionicons.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/ionicons/ionicons.scss">
+									<Candidate type="Path">
+										<Value>www\bower_components\ionic\scss\ionicons\ionicons.scss</Value>
+									</Candidate>
+								</NamedResource>
+								<NamedResource name="_ionicons-animation.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/ionicons/_ionicons-animation.scss">
+									<Candidate type="Path">
+										<Value>www\bower_components\ionic\scss\ionicons\_ionicons-animation.scss</Value>
+									</Candidate>
+								</NamedResource>
+								<NamedResource name="_ionicons-font.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/ionicons/_ionicons-font.scss">
+									<Candidate type="Path">
+										<Value>www\bower_components\ionic\scss\ionicons\_ionicons-font.scss</Value>
+									</Candidate>
+								</NamedResource>
+								<NamedResource name="_ionicons-icons.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/ionicons/_ionicons-icons.scss">
+									<Candidate type="Path">
+										<Value>www\bower_components\ionic\scss\ionicons\_ionicons-icons.scss</Value>
+									</Candidate>
+								</NamedResource>
+								<NamedResource name="_ionicons-variables.scss" uri="ms-resource://io.cordova.I101/Files/www/bower_components/ionic/scss/ionicons/_ionicons-variables.scss">
+									<Candidate type="Path">
+										<Value>www\bower_components\ionic\scss\ionicons\_ionicons-variables.scss</Value>
+									</Candidate>
+								</NamedResource>
+							</ResourceMapSubtree>
+						</ResourceMapSubtree>
+					</ResourceMapSubtree>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="css">
+					<NamedResource name="index.css" uri="ms-resource://io.cordova.I101/Files/www/css/index.css">
+						<Candidate type="Path">
+							<Value>www\css\index.css</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="plugins">
+					<ResourceMapSubtree name="org.apache.cordova.device">
+						<ResourceMapSubtree name="src">
+							<ResourceMapSubtree name="windows">
+								<NamedResource name="DeviceProxy.js" uri="ms-resource://io.cordova.I101/Files/www/plugins/org.apache.cordova.device/src/windows/DeviceProxy.js">
+									<Candidate type="Path">
+										<Value>www\plugins\org.apache.cordova.device\src\windows\DeviceProxy.js</Value>
+									</Candidate>
+								</NamedResource>
+							</ResourceMapSubtree>
+						</ResourceMapSubtree>
+						<ResourceMapSubtree name="www">
+							<NamedResource name="device.js" uri="ms-resource://io.cordova.I101/Files/www/plugins/org.apache.cordova.device/www/device.js">
+								<Candidate type="Path">
+									<Value>www\plugins\org.apache.cordova.device\www\device.js</Value>
+								</Candidate>
+							</NamedResource>
+						</ResourceMapSubtree>
+					</ResourceMapSubtree>
+				</ResourceMapSubtree>
+				<ResourceMapSubtree name="scripts">
+					<NamedResource name="index.js" uri="ms-resource://io.cordova.I101/Files/www/scripts/index.js">
+						<Candidate type="Path">
+							<Value>www\scripts\index.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="ngCode.js" uri="ms-resource://io.cordova.I101/Files/www/scripts/ngCode.js">
+						<Candidate type="Path">
+							<Value>www\scripts\ngCode.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="platformOverrides.js" uri="ms-resource://io.cordova.I101/Files/www/scripts/platformOverrides.js">
+						<Candidate type="Path">
+							<Value>www\scripts\platformOverrides.js</Value>
+						</Candidate>
+					</NamedResource>
+					<NamedResource name="winstore-jscompat.js" uri="ms-resource://io.cordova.I101/Files/www/scripts/winstore-jscompat.js">
+						<Candidate type="Path">
+							<Value>www\scripts\winstore-jscompat.js</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

@@ -1,0 +1,25 @@
+﻿<ion-view view-title="Detail">
+    <ion-nav-bar class="bar-dark">
+        <ion-nav-back-button ng-click="navigate()">
+            Back
+        </ion-nav-back-button>
+
+        <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-home" ng-click="create('mainmenu.home')"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content class="padding">
+
+        <div class="list card">
+            <div class="item  item-icon-left">
+                <i class="icon ion-speakerphone"></i>
+                <h2>{{item.title}}</h2>
+                <p>{{item.date | date:'medium'}}</p>
+            </div>
+            <div class="item item-body">
+                <p>Location : {{item.location}}</>
+                <p><span ng-bind-html="item.description"></span></p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

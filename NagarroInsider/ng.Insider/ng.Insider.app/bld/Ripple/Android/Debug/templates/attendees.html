@@ -1,0 +1,19 @@
+﻿<ion-view title="Event Attendees">
+    <ion-header-bar class="bar-positive">
+        <button class="button button-icon" ng-click="toggleProjects()">
+            <i class="icon ion-navicon-round"></i>
+        </button>
+        <h1 class="title">{{pagetitle}}</h1>
+        <!-- New Task button-->
+        <a class="button button-icon" href="#/event/home" menu-close>
+            <i class="icon ion-ios-home"></i>
+        </a>
+    </ion-header-bar>
+    <ion-content>
+        <ion-content>
+            <ion-list>
+                <ion-item ng-repeat="todo in todos" ui-sref='todo({todoId: todo.id})' ng-class='{done: todo.done}'>{{todo.name}}</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-content>
+</ion-view>

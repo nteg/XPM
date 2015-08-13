@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>RANVIR396401</Machine>
+    <WindowsUser>ranvirsingh</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>e760f655-2362-4a7c-8d52-8ff0141c1c51</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Windows\bld\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>EBAA66223CB3EB58C6F2D07FF6FBCD0DE3DE21C08A1BC2FA293857F80BCE8118</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>e760f655-2362-4a7c-8d52-8ff0141c1c51_1.0.0.0_neutral__1hxqn452wdxxp</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>e760f655-2362-4a7c-8d52-8ff0141c1c51_1hxqn452wdxxp!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>e760f655-2362-4a7c-8d52-8ff0141c1c51</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=ranvirsingh</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Windows\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-10T07:18:08.844</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Windows\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2015-06-10T07:15:41.423</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Windows\images\logo.png">
+      <PackagePath>images\logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-06-02T12:08:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Windows\images\smalllogo.png">
+      <PackagePath>images\smalllogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-06-02T12:08:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Windows\images\splashscreen.png">
+      <PackagePath>images\splashscreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-06-02T12:08:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Windows\images\storelogo.png">
+      <PackagePath>images\storelogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-06-02T12:08:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Windows\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2014-06-02T12:08:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Shared\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2015-06-10T07:12:28.386</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Shared\js\notification.js">
+      <PackagePath>js\notification.js</PackagePath>
+      <Modified>2015-06-10T07:08:13.529</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ranvirsingh\Documents\Visual Studio 2013\Projects\ngNotifyUniJS\ngNotifyUniJS\ngNotifyUniJS.Windows\bin\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-06-10T07:18:08.789</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\">
+      <Name>Microsoft.WinJS.2.0</Name>
+      <Version>1.0.9600.17018</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.2.0, MinVersion=1.0.9600.17018</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\Microsoft.WinJS.2.0.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

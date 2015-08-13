@@ -1,0 +1,27 @@
+﻿<ion-view>
+    <ion-header-bar class="bar-positive">
+        <button class="button button-icon" ng-click="toggleProjects()">
+            <i class="icon ion-navicon-round"></i>
+        </button>
+        <h1 class="title">{{pagetitle}}</h1>
+        <!-- New Task button-->
+        
+        <a class="button button-icon" ng-click="refresh()" menu-close>
+            <i class="icon ion-refresh"></i>
+        </a>
+        <a class="button button-icon" href="#/event/home" menu-close>
+            <i class="icon ion-ios-home"></i>
+        </a>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <div class="list">
+                <a class="item item-avatar" href="#/event/details" ui-sref='eventmenu.details({id: item.id})' ng-repeat="item in notifications | orderBy:'id':true">
+                    <img src="images/icon-96-xhdpi.png" />
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.location}}</p>
+                </a>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

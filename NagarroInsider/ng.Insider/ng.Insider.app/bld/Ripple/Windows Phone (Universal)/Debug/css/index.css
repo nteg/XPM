@@ -1,0 +1,9 @@
+﻿.larger {
+    font-size: 5rem;
+}
+
+.square {
+    width: 100% !important;
+    height: 0 !important;
+    padding: 0 0 100% 0 !important;
+}
