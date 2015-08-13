@@ -54,7 +54,7 @@ angular.module('interview.controllers', ['interview.services'])
                 });
             } else if (response && response.ok && response.ok === true) {
                 $scope.$emit('logoutAfter', {});
-                $state.go('login');
+                $state.go('app.login');
             }
         });
     };
@@ -168,7 +168,7 @@ angular.module('interview.controllers', ['interview.services'])
                                 } else if (response && response.ok && response.ok === true) {
                                     localStorageService.set('isLoggedIn', 1);
                                     $scope.$emit('loginAfter', {userInfo: response});
-                                    $state.go('profile');
+                                    $state.go('app.profile');
                                 }
                             });
                         } else {
@@ -219,7 +219,7 @@ angular.module('interview.controllers', ['interview.services'])
                     localStorageService.set('isLoggedIn', 1);
                     localStorageService.set('userInfo', response);
                     $scope.$emit('loginAfter', {userInfo: response});
-                    $state.go('profile');
+                    $state.go('app.profile');
                 }
             });
         }
@@ -252,7 +252,7 @@ angular.module('interview.controllers', ['interview.services'])
                         });
                     }
                 } else if (response && response.ok && response.ok === true) {
-                    $state.go('profile');
+                    $state.go('app.profile');
                 }
             });
         }
