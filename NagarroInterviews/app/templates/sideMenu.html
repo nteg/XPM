@@ -1,0 +1,41 @@
+<ion-side-menus enable-menu-with-back-views="false">
+
+      <ion-pane ion-side-menu-content>
+        <ion-nav-bar class="bar-{{theme.header.name}} nav-title-slide-ios7">
+          <ion-nav-back-button class="button-icon"><span class="icon ion-ios7-arrow-left"></span></ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+      </ion-pane>
+
+      <ion-side-menu side="left">
+        <ion-header-bar class="bar bar-header bar-{{theme.sidebar.header.name}}">
+            <h1 class="title">Nagarro Interviews</h1>
+        </ion-header-bar>
+        <ion-content has-header="true">
+          <ion-list>
+            <ion-item href="#/about" class="item-icon-left" menu-close>
+                <i class="icon icon-left ion-home"></i>About
+            </ion-item>
+            <ion-item href="#/profile/general" class="item-icon-left" menu-close ng-show="isLoggedIn">
+                <i class="icon icon-left ion-{{system.platform}}-person"></i>Profile
+            </ion-item>
+            <ion-item href="#/openings" class="item-icon-left" menu-close ng-show="isLoggedIn">
+                <i class="icon icon-left ion-{{system.platform}}-list"></i>Current Openings
+            </ion-item>
+            <ion-item href="#/login" class="item-icon-left" menu-close ng-show="!isLoggedIn">
+                <i class="icon icon-left ion-log-in"></i>Login
+            </ion-item>
+            <ion-item href="#/signup" class="item-icon-left" menu-close ng-show="!isLoggedIn">
+                 <i class="icon icon-left ion-{{system.platform}}-upload"></i>SignUp
+            </ion-item>
+            <ion-item href="#/chpwd" class="item-icon-left" menu-close ng-show="isLoggedIn">
+                 <i class="icon icon-left ion-{{system.platform}}-settings"></i>Change Password
+            </ion-item>
+            <ion-item href="#/login" class="item-icon-left" menu-close ng-show="isLoggedIn" ng-click="logOut()">
+                <i class="icon ion-log-out"></i>Logout
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-side-menu>
+
+    </ion-side-menus>
